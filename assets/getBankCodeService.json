@@ -1,0 +1,699 @@
+{
+  "status":"success",
+  "message":"",
+  "errorCode":"",
+  "bankCodeList": [
+    {
+      "key": "003",
+      "nameTC": "渣打銀行（香港）有限公司",
+      "nameEN": "Standard Chartered Bank (Hong Kong) Limited"
+    },
+    {
+      "key": "004",
+      "nameTC": "香港上海匯豐銀行有限公司",
+      "nameEN": "The Hongkong and Shanghai Banking Corporation Limited"
+    },
+    {
+      "key": "005",
+      "nameTC": "東方匯理銀行",
+      "nameEN": "CALYON"
+    },
+    {
+      "key": "006",
+      "nameTC": "花旗銀行",
+      "nameEN": "Citibank, N.A."
+    },
+    {
+      "key": "007",
+      "nameTC": "摩根大通銀行",
+      "nameEN": "JPMorgan Chase Bank, N.A."
+    },
+
+
+    {
+      "key": "008",
+      "nameTC": "荷蘭銀行",
+      "nameEN": "ABN AMRO Bank N.V."
+    },
+    {
+      "key": "009",
+      "nameTC": "中國建設銀行（亞洲）股份有限公司",
+      "nameEN": "China Construction Bank (Asia) Corporation Limited"
+    },
+    {
+      "key": "012",
+      "nameTC": "中國銀行（香港）有限公司",
+      "nameEN": "Bank of China (Hong Kong) Limited"
+    },
+    {
+      "key": "015",
+      "nameTC": "東亞銀行有限公司",
+      "nameEN": "The Bank of East Asia, Limited"
+    },
+    {
+      "key": "016",
+      "nameTC": "星展銀行（香港）有限公司",
+      "nameEN": "DBS Bank (Hong Kong) Limited"
+    },
+    {
+      "key": "018",
+      "nameTC": "中信銀行國際有限公司",
+      "nameEN": "CITIC Bank International Limited"
+    },
+    {
+      "key": "020",
+      "nameTC": "永隆銀行有限公司",
+      "nameEN": "Wing Lung Bank Ltd."
+    },
+    {
+      "key": "021",
+      "nameTC": "豐明銀行有限公司",
+      "nameEN": "MEVAS Bank Limited"
+    },
+    {
+      "key": "022",
+      "nameTC": "華僑銀行",
+      "nameEN": "Oversea-Chinese Banking Corporation Ltd."
+    },
+    {
+      "key": "024",
+      "nameTC": "恒生銀行有限公司",
+      "nameEN": "Hang Seng Bank Ltd."
+    },
+    {
+      "key": "025",
+      "nameTC": "上海商業銀行有限公司",
+      "nameEN": "Shanghai Commercial Bank Ltd."
+    },
+    {
+      "key": "027",
+      "nameTC": "交通銀行股份有限公司",
+      "nameEN": "Bank of Communications Co., Ltd."
+    },
+    {
+      "key": "028",
+      "nameTC": "大眾銀行(香港)有限公司",
+      "nameEN": "Public Bank (Hong Kong) Limited"
+    },
+    {
+      "key": "035",
+      "nameTC": "永亨銀行有限公司",
+      "nameEN": "Wing Hang Bank Ltd."
+    },
+    {
+      "key": "038",
+      "nameTC": "大有銀行有限公司",
+      "nameEN": "Tai Yau Bank Ltd."
+    },
+    {
+      "key": "039",
+      "nameTC": "集友銀行有限公司",
+      "nameEN": "Chiyu Banking Corporation Ltd."
+    },
+    {
+      "key": "040",
+      "nameTC": "大新銀行有限公司",
+      "nameEN": "Dah Sing Bank, Ltd."
+    },
+    {
+      "key": "041",
+      "nameTC": "創興銀行有限公司",
+      "nameEN": "Chong Hing Bank Limited"
+    },
+    {
+      "key": "043",
+      "nameTC": "南洋商業銀行有限公司",
+      "nameEN": "Nanyang Commercial Bank, Ltd."
+    },
+    {
+      "key": "045",
+      "nameTC": "UCO Bank",
+      "nameEN": "UCO Bank"
+    },
+    {
+      "key": "046",
+      "nameTC": "韓國外換銀行",
+      "nameEN": "Korea Exchange Bank"
+    },
+    {
+      "key": "047",
+      "nameTC": "三菱東京UFJ銀行",
+      "nameEN": "The Bank of Tokyo-Mitsubishi UFJ, Ltd."
+    },
+    {
+      "key": "049",
+      "nameTC": "盤谷銀行",
+      "nameEN": "Bangkok Bank Public Company Limited"
+    },
+    {
+      "key": "050",
+      "nameTC": "印度海外銀行",
+      "nameEN": "Indian Overseas Bank"
+    },
+    {
+      "key": "054",
+      "nameTC": "德意志銀行",
+      "nameEN": "Deutsche Bank AG"
+    },
+    {
+      "key": "055",
+      "nameTC": "美國銀行",
+      "nameEN": "Bank of America, N.A."
+    },
+    {
+      "key": "056",
+      "nameTC": "法國巴黎銀行",
+      "nameEN": "BNP Paribas"
+    },
+    {
+      "key": "058",
+      "nameTC": "印度銀行",
+      "nameEN": "Bank of India"
+    },
+    {
+      "key": "060",
+      "nameTC": "巴基斯坦國民銀行",
+      "nameEN": "National Bank of Pakistan"
+    },
+    {
+      "key": "061",
+      "nameTC": "大生銀行有限公司",
+      "nameEN": "Tai Sang Bank Limited"
+    },
+    {
+      "key": "063",
+      "nameTC": "馬來亞銀行",
+      "nameEN": "Malayan Banking Berhad (Maybank)"
+    },
+    {
+      "key": "065",
+      "nameTC": "三井住友銀行",
+      "nameEN": "Sumitomo Mitsui Banking Corporation"
+    },
+    {
+      "key": "066",
+      "nameTC": "印尼國家銀行",
+      "nameEN": "PT. Bank Negara Indonesia (Persero) Tbk."
+    },
+    {
+      "key": "067",
+      "nameTC": "金融銀行有限公司",
+      "nameEN": "Banco de Oro Unibank, Inc."
+    },
+    {
+      "key": "071",
+      "nameTC": "大華銀行有限公司",
+      "nameEN": "United Overseas Bank Ltd."
+    },
+    {
+      "key": "072",
+      "nameTC": "中國工商銀行（亞洲）有限公司",
+      "nameEN": "Industrial and Commercial Bank of China (Asia) Limited"
+    },
+    {
+      "key": "074",
+      "nameTC": "Barclays Bank Plc.",
+      "nameEN": "Barclays Bank Plc."
+    },
+    {
+      "key": "076",
+      "nameTC": "加拿大豐業銀行",
+      "nameEN": "The Bank of Nova Scotia"
+    },
+    {
+      "key": "080",
+      "nameTC": "Royal Bank of Canada",
+      "nameEN": "Royal Bank of Canada"
+    },
+    {
+      "key": "081",
+      "nameTC": "法國興業銀行",
+      "nameEN": "Societe Generale"
+    },
+    {
+      "key": "082",
+      "nameTC": "印度國家銀行",
+      "nameEN": "State Bank of India"
+    },
+    {
+      "key": "085",
+      "nameTC": "加拿大多倫多道明銀行",
+      "nameEN": "The Toronto-Dominion Bank"
+    },
+    {
+      "key": "086",
+      "nameTC": "滿地可銀行",
+      "nameEN": "Bank of Montreal"
+    },
+    {
+      "key": "091",
+      "nameTC": "蘇格蘭皇家銀行有限公司",
+      "nameEN": "The Royal Bank of Scotland plc"
+    },
+    {
+      "key": "092",
+      "nameTC": "加拿大帝國商業銀行",
+      "nameEN": "Canadian Imperial Bank of Commerce"
+    },
+    {
+      "key": "093",
+      "nameTC": "蘇格蘭銀行",
+      "nameEN": "Bank of Scotland"
+    },
+    {
+      "key": "097",
+      "nameTC": "德國商業銀行",
+      "nameEN": "Commerzbank AG"
+    },
+    {
+      "key": "103",
+      "nameTC": "瑞士銀行",
+      "nameEN": "UBS AG, Hong Kong"
+    },
+    {
+      "key": "106",
+      "nameTC": "美國匯豐銀行",
+      "nameEN": "HSBC Bank USA, N.A."
+    },
+    {
+      "key": "109",
+      "nameTC": "瑞穗實業銀行",
+      "nameEN": "Mizuho Corporate Bank, Ltd., Hong Kong Branch"
+    },
+    {
+      "key": "112",
+      "nameTC": "Hana Bank",
+      "nameEN": "Hana Bank"
+    },
+    {
+      "key": "113",
+      "nameTC": "德國中央合作銀行",
+      "nameEN": "DZ BANK AG Deutsche Zentral-Genossenschaftsbank"
+    },
+    {
+      "key": "118",
+      "nameTC": "Woori Bank",
+      "nameEN": "Woori Bank"
+    },
+    {
+      "key": "119",
+      "nameTC": "Philippine National Bank",
+      "nameEN": "Philippine National Bank"
+    },
+    {
+      "key": "128",
+      "nameTC": "富邦銀行(香港)有限公司",
+      "nameEN": "Fubon Bank (Hong Kong) Limited"
+    },
+    {
+      "key": "139",
+      "nameTC": "紐約梅隆銀行有限公司",
+      "nameEN": "The Bank of New York Mellon"
+    },
+    {
+      "key": "145",
+      "nameTC": "ING Bank N.V.",
+      "nameEN": "ING Bank N.V."
+    },
+    {
+      "key": "147",
+      "nameTC": "西班牙對外銀行",
+      "nameEN": "Banco Bilbao Vizcaya Argentaria, S.A."
+    },
+    {
+      "key": "150",
+      "nameTC": "澳洲銀行",
+      "nameEN": "National Australia Bank Limited"
+    },
+    {
+      "key": "151",
+      "nameTC": "西太平洋銀行",
+      "nameEN": "Westpac Banking Corporation"
+    },
+    {
+      "key": "152",
+      "nameTC": "澳洲紐西蘭銀行集團",
+      "nameEN": "Australia and New Zealand Banking Group Ltd."
+    },
+    {
+      "key": "153",
+      "nameTC": "澳洲聯邦銀行",
+      "nameEN": "Commonwealth Bank of Australia"
+    },
+    {
+      "key": "161",
+      "nameTC": "Intesa Sanpaolo S.p.A.",
+      "nameEN": "Korea Exchange Bank"
+    },
+    {
+      "key": "164",
+      "nameTC": "德國裕寶聯合銀行",
+      "nameEN": "Bayerische Hypo- und Vereinsbank AG, Hong Kong Branch"
+    },
+    {
+      "key": "165",
+      "nameTC": "瑞典商業銀行",
+      "nameEN": "Svenska Handelsbanken AB (publ)"
+    },
+    {
+      "key": "170",
+      "nameTC": "千葉銀行",
+      "nameEN": "The Chiba Bank Ltd."
+    },
+    {
+      "key": "176",
+      "nameTC": "意大利聯合信貸銀行",
+      "nameEN": "UniCredit, Societa' per Azioni"
+    },
+    {
+      "key": "178",
+      "nameTC": "比利時聯合銀行",
+      "nameEN": "KBC Bank N.V., Hong Kong Branch"
+    },
+    {
+      "key": "180",
+      "nameTC": "富國銀行香港分行",
+      "nameEN": "Wells Fargo Bank, N.A., Hong Kong Branch"
+    },
+    {
+      "key": "183",
+      "nameTC": "荷蘭合作銀行",
+      "nameEN": "Cooperatieve Centrale Raiffeisen-Boerenleenbank B.A."
+    },
+    {
+      "key": "185",
+      "nameTC": "星展銀行香港分行",
+      "nameEN": "DBS Bank Ltd, Hong Kong Branch"
+    },
+    {
+      "key": "186",
+      "nameTC": "靜岡銀行",
+      "nameEN": "The Shizuoka Bank Ltd."
+    },
+    {
+      "key": "188",
+      "nameTC": "八十二銀行",
+      "nameEN": "The Hachijuni Bank, Ltd."
+    },
+    {
+      "key": "196",
+      "nameTC": "標準銀行亞洲有限公司",
+      "nameEN": "Standard Bank Asia Limited"
+    },
+    {
+      "key": "198",
+      "nameTC": "華南商業銀行股份有限公司",
+      "nameEN": "Hua Nan Commercial Bank, Ltd."
+    },
+    {
+      "key": "199",
+      "nameTC": "滋賀銀行",
+      "nameEN": "The Shiga Bank, Ltd."
+    },
+    {
+      "key": "201",
+      "nameTC": "臺灣銀行股份有限公司",
+      "nameEN": "Bank of Taiwan"
+    },
+    {
+      "key": "202",
+      "nameTC": "The Chugoku Bank Limited",
+      "nameEN": "The Chugoku Bank Limited"
+    },
+    {
+      "key": "203",
+      "nameTC": "第一商業銀行股份有限公司",
+      "nameEN": "First Commercial Bank"
+    },
+    {
+      "key": "205",
+      "nameTC": "RBS Coutts Bank Ltd.",
+      "nameEN": "RBS Coutts Bank Ltd."
+    },
+    {
+      "key": "206",
+      "nameTC": "彰化商業銀行股份有限公司",
+      "nameEN": "Chang Hwa Commercial Bank, Ltd."
+    },
+    {
+      "key": "208",
+      "nameTC": "巴伐利亞洲銀行",
+      "nameEN": "Bayerische Landesbank"
+    },
+    {
+      "key": "210",
+      "nameTC": "法國外貿銀行",
+      "nameEN": "Natixis"
+    },
+    {
+      "key": "214",
+      "nameTC": "中國工商銀行股份有限公司",
+      "nameEN": "Industrial and Commercial Bank of China Limited"
+    },
+    {
+      "key": "218",
+      "nameTC": "德國西德銀行",
+      "nameEN": "WestLB AG"
+    },
+    {
+      "key": "220",
+      "nameTC": "美國道富銀行",
+      "nameEN": "State Street Bank and Trust Company"
+    },
+    {
+      "key": "221",
+      "nameTC": "中國建設銀行股份有限公司",
+      "nameEN": "China Construction Bank Corporation"
+    },
+    {
+      "key": "222",
+      "nameTC": "中國農業銀行股份有限公司",
+      "nameEN": "Agricultural Bank of China Limited"
+    },
+    {
+      "key": "224",
+      "nameTC": "伊予銀行",
+      "nameEN": "The Iyo Bank, Ltd., Hong Kong Branch"
+    },
+    {
+      "key": "225",
+      "nameTC": "Fortis Bank, Hong Kong Branch",
+      "nameEN": "Fortis Bank, Hong Kong Branch"
+    },
+    {
+      "key": "227",
+      "nameTC": "Erste Group Bank AG",
+      "nameEN": "Erste Group Bank AG"
+    },
+    {
+      "key": "229",
+      "nameTC": "中國信託商業銀行股份有限公司",
+      "nameEN": "Chinatrust Commercial Bank, Ltd."
+    },
+    {
+      "key": "230",
+      "nameTC": "臺灣中小企業銀行",
+      "nameEN": "Taiwan Business Bank, Hong Kong Branch"
+    },
+    {
+      "key": "233",
+      "nameTC": "Credit Suisse",
+      "nameEN": "Credit Suisse"
+    },
+    {
+      "key": "234",
+      "nameTC": "意大利西雅那銀行香港分行",
+      "nameEN": "Banca Monte dei Paschi di Siena S.p.A. Hong Kong Branch"
+    },
+    {
+      "key": "235",
+      "nameTC": "匯豐私人銀行（瑞士）有限公司",
+      "nameEN": "HSBC Private Bank (Suisse) SA"
+    },
+    {
+      "key": "236",
+      "nameTC": "國泰世華商業銀行股份有限公司",
+      "nameEN": "Cathay United Bank Company, Limited"
+    },
+    {
+      "key": "237",
+      "nameTC": "瑞士盈豐銀行股份有限公司",
+      "nameEN": "EFG Bank AG"
+    },
+    {
+      "key": "238",
+      "nameTC": "招商銀行股份有限公司",
+      "nameEN": "China Merchants Bank Co., Ltd."
+    },
+    {
+      "key": "239",
+      "nameTC": "台北富邦商業銀行股份有限公司",
+      "nameEN": "Taipei Fubon Commercial Bank Co., Ltd."
+    },
+    {
+      "key": "240",
+      "nameTC": "法國巴黎財富管理銀行",
+      "nameEN": "BNP Paribas Wealth Management"
+    },
+    {
+      "key": "241",
+      "nameTC": "永豐商業銀行股份有限公司",
+      "nameEN": "Bank SinoPac"
+    },
+    {
+      "key": "242",
+      "nameTC": "兆豐國際商業銀行",
+      "nameEN": "Mega International Commercial Bank Co., Ltd."
+    },
+    {
+      "key": "243",
+      "nameTC": "玉山商業銀行股份有限公司",
+      "nameEN": "E.Sun Commercial Bank, Ltd."
+    },
+    {
+      "key": "245",
+      "nameTC": "台新國際商業銀行股份有限公司",
+      "nameEN": "Taishin International Bank Co., Ltd."
+    },
+    {
+      "key": "246",
+      "nameTC": "聯合銀行",
+      "nameEN": "United Commercial Bank"
+    },
+    {
+      "key": "247",
+      "nameTC": "大眾銀行",
+      "nameEN": "Public Bank Berhad"
+    },
+    {
+      "key": "248",
+      "nameTC": "豐隆銀行有限公司",
+      "nameEN": "Hong Leong Bank Berhad"
+    },
+    {
+      "key": "249",
+      "nameTC": "渣打銀行",
+      "nameEN": "Standard Chartered Bank Hong Kong Branch"
+    },
+    {
+      "key": "250",
+      "nameTC": "花旗銀行(香港)有限公司",
+      "nameEN": "Citibank (Hong Kong) Limited"
+    },
+    {
+      "key": "251",
+      "nameTC": "ICICI Bank Limited",
+      "nameEN": "ICICI Bank Limited"
+    },
+    {
+      "key": "253",
+      "nameTC": "瑞士安勤私人銀行有限公司",
+      "nameEN": "Falcon Private Bank Ltd."
+    },
+    {
+      "key": "254",
+      "nameTC": "Melli Bank plc",
+      "nameEN": "Melli Bank plc"
+    },
+    {
+      "key": "255",
+      "nameTC": "Societe Generale Bank & Trust",
+      "nameEN": "Societe Generale Bank & Trust"
+    },
+    {
+      "key": "256",
+      "nameTC": "Allahabad Bank",
+      "nameEN": "Allahabad Bank"
+    },
+    {
+      "key": "257",
+      "nameTC": "Newedge Group",
+      "nameEN": "Newedge Group"
+    },
+    {
+      "key": "258",
+      "nameTC": "華美銀行",
+      "nameEN": "East West Bank"
+    },
+    {
+      "key": "259",
+      "nameTC": "巴魯達銀行",
+      "nameEN": "Bank of Baroda"
+    },
+    {
+      "key": "260",
+      "nameTC": "遠東國際商業銀行股份有限公司",
+      "nameEN": "Far Eastern International Bank"
+    },
+    {
+      "key": "261",
+      "nameTC": "Axis Bank Limited",
+      "nameEN": "Axis Bank Limited"
+    },
+    {
+      "key": "262",
+      "nameTC": "Canara Bank",
+      "nameEN": "Canara Bank"
+    },
+    {
+      "key": "263",
+      "nameTC": "國泰銀行",
+      "nameEN": "Cathay Bank"
+    },
+    {
+      "key": "264",
+      "nameTC": "台灣土地銀行股份有限公司",
+      "nameEN": "Land Bank of Taiwan Co., Ltd."
+    },
+    {
+      "key": "265",
+      "nameTC": "合作金庫銀行",
+      "nameEN": "Taiwan Cooperative Bank, Ltd."
+    },
+    {
+      "key": "266",
+      "nameTC": "Punjab National Bank",
+      "nameEN": "Punjab National Bank"
+    },
+    {
+      "key": "267",
+      "nameTC": "Banco Santander S.A.",
+      "nameEN": "Banco Santander S.A."
+    },
+    {
+      "key": "268",
+      "nameTC": "Union Bank of India",
+      "nameEN": "Union Bank of India"
+    },
+    {
+      "key": "269",
+      "nameTC": "上海商業儲蓄銀行股份有限公司",
+      "nameEN": "The Shanghai Commercial & Savings Bank, Ltd."
+    },
+    {
+      "key": "271",
+      "nameTC": "Industrial Bank of Korea",
+      "nameEN": "Industrial Bank of Korea"
+    },
+    {
+      "key": "272",
+      "nameTC": "ING Asia Private Bank Ltd.",
+      "nameEN": "ING Asia Private Bank Ltd."
+    },
+    {
+      "key": "273",
+      "nameTC": "Shinhan Bank",
+      "nameEN": "Shinhan Bank"
+    },
+    {
+      "key": "274",
+      "nameTC": "臺灣工業銀行股份有限公司",
+      "nameEN": "Industrial Bank of Taiwan Co., Ltd."
+    },
+    {
+      "key": "868",
+      "nameTC": "CLS Bank International",
+      "nameEN": "CLS Bank International"
+    }
+  ]
+}
