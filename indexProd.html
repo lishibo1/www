@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>分期貸款 - 手機申請</title>
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <meta property="og:url" content="https://www.hkbea.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/index-gift.jpg" /> <!-- facebook -->
+  <meta property="og:title" content="東亞銀行稅季貸款，無須現身， 現金一天到手！">
+  <meta property="og:description" content="即按 www.hkbea.com/iloan 申請東亞銀行稅季貸款，可享利率優惠！受條款約束。借定唔借？還得到先好借！">
+
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+  <script src="assets/js/configs.js?20211008v1"></script>
+  <script src="assets/js/isMobile.js?20211008v1"></script>
+  <!-- <script src="https://whp.hkbea.com/js/doubleReminder/loan/doubleReminderLoanen.js"></script>
+  <script src="https://whp.hkbea.com/js/doubleReminder/loan/doubleReminderLoantc.js"></script> -->
+  <!-- <script src="https://www.hkbea.com/js/doubleReminder/loan/doubleReminderLoanen.js"></script>
+  <script src="https://www.hkbea.com/js/doubleReminder/loan/doubleReminderLoantc.js"></script> -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    .model-javascript .content-top p{
+      margin: 14px 0;
+    }
+    .model-javascript .content-top ol{
+      margin: 14px 0;
+      padding-left:40px;
+    }
+    .model-javascript .content-top table{
+      width: 100%;
+      hyphens: auto;
+    }
+
+    html, body {
+      -webkit-font-smoothing: antialiased;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      font-family: -apple-system, "Helvetica Neue", "Roboto", sans-serif;
+      font-size: 62.5%
+    }
+
+    body {
+      font-size: 1.4rem;
+      height: 100%;
+      overflow: auto;
+    }
+
+    .is-version {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      z-index: 9;
+      display: none;
+      background-color: rgba(0, 0, 0, .4);
+    }
+
+    .alert-modal {
+      max-width: 270px;
+      background-color: #fff;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      border-radius: 13px;
+      -webkit-border-radius: 13px;
+      margin: auto;
+    }
+
+    .alert-modal p {
+      margin: 0;
+      text-align: justify;
+      font-size: 13px;
+      color: inherit;
+      padding: 0 16px 0;
+    }
+
+    .alert-modal h4 {
+      font-size: 17px;
+      font-weight: 600;
+      margin: 0;
+      padding: 20px 16px 7px;
+      text-align: center;
+    }
+
+    .alert-modal button {
+      border: none;
+      border-top: 1px solid #dbdbdf;
+      display: block;
+      font-size: 17px;
+      width: 100%;
+      padding: 6px;
+      height: 44px;
+      background-color: transparent;
+      color: #488aff;
+      font-weight: 700;
+    }
+
+    .alert-modal span {
+      color: #488aff;
+      text-decoration: underline;
+    }
+
+    .alert-modal input {
+      opacity: 0;
+    }
+
+    .copy-success {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      width: 150px;
+      height: 40px;
+      line-height: 40px;
+      background-color: rgba(0, 0, 0, .85);
+      color: #fff;
+      z-index: 1;
+      border-radius: 6px;
+      opacity: 0;
+      text-align: center;
+    }
+
+    .copy-success.show {
+      z-index: 10;
+      animation: showCopy 2s ease;
+      -webkit-animation: showCopy 2s ease;
+    }
+
+    @keyframes showCopy {
+      0% {
+        opacity: 0
+      }
+
+      30% {
+        opacity: 1
+      }
+
+      70% {
+        opacity: 1
+      }
+
+      100% {
+        opacity: 0
+      }
+    }
+
+    @-webkit-keyframes showCopy {
+      0% {
+        opacity: 0
+      }
+
+      30% {
+        opacity: 1
+      }
+
+      70% {
+        opacity: 1
+      }
+
+      100% {
+        opacity: 0
+      }
+    }
+
+    .bea-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      width: 100%;
+      height: 5.5rem;
+      padding: 4px;
+      min-height: 44px;
+      background-image: url(assets/imgs/logo_bg.jpg), url(assets/imgs/rainbow-bg.jpg);
+      background-size: auto 50%, auto 30%;
+      background-position: right 15% top 30%, 0 bottom;
+      background-repeat: no-repeat, repeat-x;
+      background-color: #ed171f;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .font-34 {
+      font-size: 3.4rem;
+    }
+
+    .font-22 {
+      font-size: 2.2rem;
+    }
+
+    .font-16 {
+      font-size: 1.6rem;
+      margin-left: .8rem;
+      display: -webkit-box;
+      -webkit-box-orient: horizontal;
+      -webkit-box-pack: center;
+      -webkit-box-align: center;
+    }
+
+    .font-12 {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .font-blue {
+      color: #04adf0;
+    }
+
+    .underline {
+      text-decoration: underline;
+    }
+
+    .header-top {
+      margin-left: 15%;
+      width: 70% !important;
+      margin-bottom: 1rem;
+      margin-top: 6.5rem;
+    }
+
+    .publicize-img {
+      width: 100%;
+    }
+
+    .benifit-box {
+      width: 100%;
+      margin-top: -5px;
+      overflow: hidden;
+    }
+
+    .benifit-box>div {
+      width: 50%;
+      height: 100%;
+      float: left;
+    }
+
+    .rate {
+      background-color: #ea1f22;
+    }
+
+    .cash-back {
+      background-color: #a41b21;
+    }
+
+    .benifit-box p {
+      color: #fff;
+      text-align: right;
+    }
+
+    .benifit-box img {
+      width: 100%;
+    }
+
+    .benifit-box .title {
+      padding: 1rem;
+    }
+
+    .benifit-box .value {
+      font-size: 5rem;
+      font-weight: bolder;
+      padding-right: 1rem;
+    }
+
+    .tip {
+      padding: 0.8rem 0.8rem;
+      color: #585656;
+    }
+
+    .form-box {
+      width: 100%;
+      padding: 0.5rem;
+      color: #585656;
+    }
+
+    .form-box .item {
+      height: 3.2rem;
+      margin: 1rem 0;
+
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: row;
+    }
+
+    .item .title {
+      min-width: 6rem;
+      flex-basis: 6rem;
+    }
+
+    .item .input-box {
+      flex-grow: 1;
+      width: 100%;
+      padding: 0 0.5rem;
+    }
+
+    .item .tag {
+      font-size: 1rem;
+    }
+
+    .item input {
+      border: 1px solid #e9e9ec;
+      border-radius: 0;
+      height: 3rem;
+      text-align: justify;
+      -webkit-appearance: none;
+    }
+
+    #branchCode {
+      width: 47%;
+      float: left;
+    }
+
+    #sellerId {
+      width: 47%;
+      float: right;
+    }
+
+    #extendId {
+      width: 100%;
+    }
+
+    .my-btn {
+      display: block;
+      margin: 1rem auto;
+      border: 0;
+      outline: none;
+      background-color: #f89f2f;
+      width: 94%;
+      height: 6rem;
+      font-size: 1.8rem;
+      border-radius: 0;
+      color: #fff;
+      padding: 0 1em;
+      text-decoration: none;
+      text-align: center;
+      -webkit-appearance: none;
+      text-overflow: ellipsis;
+      text-transform: none;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color, opacity 100ms linear;
+      user-select: none;
+      line-height: 1;
+    }
+
+    .text {
+      margin: 1rem;
+      font-size: 1.6rem;
+      text-align: center;
+      color: #585656;
+    }
+
+    .en-text {
+      padding: 0 0.5rem;
+      text-align: center;
+      color: #000;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .remark-box {
+      overflow: hidden;
+      transition: height 1s;
+      -webkit-transition: height 1s;
+      /* Safari and Chrome */
+    }
+
+    .remark {
+      padding: 1rem;
+      font-size: 1.2rem;
+      color: #333;
+      font-weight: bold;
+      border-bottom: 1px solid #e9e9ec;
+      border-top: 1px solid #e9e9ec;
+    }
+
+    .remark-content {
+      padding: 0.5rem;
+      padding-right: 0.8rem;
+      font-size: 1.2rem;
+      color: #585656;
+      padding-left: 2rem;
+      text-indent: -1.2rem;
+      text-align: justify;
+    }
+
+    .toggle-icon {
+      position: absolute;
+      right: 2rem;
+      width: 1.5rem;
+      opacity: 0.5;
+    }
+
+    .notice-text {
+      padding-left: 1rem;
+      color: red;
+      /*font-size: 16px;*/
+      text-align: left;
+    }
+
+    .list {
+      padding: 0.5rem 0.5rem 2rem 2rem;
+    }
+
+    .market-date {
+      padding-left: 1rem;
+      padding-bottom: 2rem;
+    }
+
+    .prd-info {
+      display: inline-block;
+      margin: 0 1rem 2rem;
+      text-decoration: underline;
+    }
+
+    .table-style {
+      width: 88%;
+      margin: .5rem 1.7rem;
+    }
+
+    .table-style td {
+      padding: 0 1.3vw;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-top: 0;
+      color: #585656;
+      border-left: 0;
+    }
+
+    .table-style td:last-child {
+      border-left: 0;
+    }
+
+    .table-style td:first-child {
+      border-left: 1px solid #ccc;
+    }
+
+    .table-style tr:first-child td {
+      border-top: 1px solid #ccc;
+    }
+
+    .err-page {
+      padding-top: 7rem;
+      width: 100%;
+      height: calc(100% - 5.5rem);
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .err-msg {
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .office-hour {
+      padding-left: 1rem;
+    }
+
+    .remark-content-re {
+      padding-right: 0.8rem;
+      font-size: 1.2rem;
+      color: #000;
+      padding-left: 2rem;
+      text-align: justify;
+      margin-bottom: 0.5rem;
+    }
+
+    .termsLink ul li a{
+      color: #000
+    }
+
+    .termsModel{
+      position: fixed;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      z-index: 300;
+      display: none;
+    }
+
+    .termsModel .terms-shadow{
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+      background: #ddd;
+    }
+
+    .termsModel .terms-content{
+      width: 80%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .termsModel .terms-content .terms-header{
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .termsErrEN{
+      padding: 10px;
+      display: none;
+      color: red;
+    }
+
+    .termsErrTC{
+      padding: 10px;
+      display: none;
+      color: red;
+    }
+
+    .model-javascript {
+      position: fixed;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      z-index: 100;
+      display: none;
+    }
+
+    .model-javascript .model-shadow {
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+      background: #ddd;
+    }
+
+    .close-line {
+      width: 100%;
+      height: 30px;
+      padding: 5px;
+      position: absolute;
+      bottom: calc(100% - 6rem);
+      text-align: right;
+    }
+
+    .close-line .close-btn {
+      width: 20px;
+      height: 20px;
+      position: relative;
+    }
+
+    .close-line .close-btn::before,
+    .close-line .close-btn::after {
+      content: "";
+      position: absolute;
+      /*方便进行定位*/
+      height: 20px;
+      width: 2px;
+      top: 2px;
+      right: 9px;
+      /*设置top和right使图像在20*20框中居中*/
+      background: #fff;
+    }
+
+    .termsModel .close-line .close-btn::before,
+    .termsModel .close-line .close-btn::after {
+      background: #000;
+    }
+
+    .close-line .close-btn::before {
+      transform: rotate(45deg);
+      /*进行旋转*/
+    }
+
+    .close-line .close-btn::after {
+      transform: rotate(-45deg);
+    }
+
+    .model-javascript .model-content {
+      width: 100%;
+      height: calc(100% - 6rem);
+      position: absolute;
+      bottom: 0px;
+      display: flex;
+      flex-direction: column;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      background: #fff;
+    }
+
+    .model-javascript .model-content .content-top {
+      width: 100%;
+      flex: 1;
+      overflow: scroll;
+      padding: 10px
+    }
+
+    .model-javascript .model-content .content-bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .model-javascript .model-content .content-bottom .pdf-remark {
+      background-color: #fcfcb9;
+      margin: 0 10px 0;
+      padding: 4px 8px 8px;
+      font-size: 14px;
+    }
+
+    .model-javascript .model-content .content-bottom .pdf-remark b {
+      color: #ed171f;
+    }
+
+    .model-javascript .model-content .content-bottom .checkbox-block label {
+      font-size: 14px;
+    }
+
+    .model-javascript .model-content .content-bottom .checkbox-block b {
+      color: #ed171f;
+    }
+
+    .model-javascript .model-content .content-bottom .my-btn {
+      display: block;
+      margin: 1rem auto;
+      margin-bottom: 0;
+      border: 0;
+      outline: none;
+      background-color: #f89f2f;
+      width: 94%;
+      height: 6rem;
+      font-size: 1.8rem;
+      border-radius: 0;
+      color: #fff;
+      padding: 0 1em;
+      text-decoration: none;
+      text-align: center;
+      -webkit-appearance: none;
+      text-overflow: ellipsis;
+      text-transform: none;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color, opacity 100ms linear;
+      user-select: none;
+      line-height: 1;
+    }
+  </style>
+  <script>
+    var versaTag = {};
+    versaTag.id = "6575";
+    versaTag.sync = 0;
+    versaTag.dispType = "js";
+    versaTag.ptcl = "HTTPS";
+    versaTag.bsUrl = "";
+    versaTag.activityParams = { "Session": "" };
+    versaTag.retargetParams = {};
+    versaTag.dynamicRetargetParams = {};
+    versaTag.conditionalParams = {};
+  </script>
+  <script id="ebOneTagUrlId" src="https://secure-ds.serving-sys.com/SemiCachedScripts/ebOneTag.js"></script>
+  <noscript>
+    <iframe
+      src="?cn=ot&amp;onetagid=6575&amp;ns=1&amp;activityValues=$$Session=[Session]$$&amp;retargetingValues=$$$$&amp;dynamicRetargetingValues=$$$$&amp;acp=$$$$&amp;"
+      style="display:none;width:0px;height:0px"></iframe>
+  </noscript>
+</head>
+
+<body>
+  <div id="EN">
+    <div class="copy-success" id="copySuccess">複製成功</div>
+    <div class="is-version">
+      <div class="alert-modal">
+        <h4>注意</h4>
+        <p>提提你，如於申請過程中未能上載文件或遇到其他問題，可能因為你使用的瀏覽器並不支援此網頁。請<span
+            onClick="copyUrl()">按此</span>複製連結至Safari,Chrome,Firefox或Internet
+          Explorer繼續申請。</p>
+        <input type="text" id="copy-ipt" value="测试复制的内容">
+        <button onclick="hideAlert()">確認</button>
+      </div>
+    </div>
+
+    <div class="bea-header"></div>
+    <div class="main" style="display: block">
+      <img class="header-top publicize-img" id="landingImg" src="" alt="" />
+      <img class="publicize-img" id="loanImg" src=""
+        alt="" />
+      <!-- <p class="notice-text" style="font-weight: bold;text-decoration: underline">1. 提取分期貸款HK$100,000或以上，參加抽獎贏取至潮智能電話(參考零售價: HK$8,599)</p> -->
+      <p class="notice-text">現有客戶如申請貸款額HK$30,000 或以下更可享<br />&nbsp;「 無卡自動櫃員機提取貸款服務」</p>
+      <ul class="list">
+        <li>客戶可於全港超過200部東亞銀行自動櫃員機提取貸款</li>
+        <li>自動櫃員機提取貸款的上限每次為HK$15,000，如貸款額超過該上限，有關貸款將被視為兩個個別貸款。</li>
+      </ul>
+      <div class="termsLink">
+        <p style="padding-left: 10px;">請按此查閱</p>
+        <ul class="list">
+          <li><a id="keyFacts" target="_blank" href="http://hkgwcmvt-18/iw/cci/meta/injection/iw-mount/default/main/PBD/WORKAREA/CCFD-Consumer_Loan/pdf/tc/iloan/Instalment%20Loan%20KFS-C.pdf">產品資料概要</a></li>
+          <li><a id="termsConditions" target="_blank" href="http://hkgwcmvt-18/iw/cci/meta/injection/iw-mount/default/main/PBD/WORKAREA/CCFD-Consumer_Loan/pdf/tc/iloan/iloan-tnc.pdf">條款及細則</a></li>
+          <li><a id="statement" target="_blank" href="http://hkgwcmvt-18/iw/cci/meta/injection/iw-mount/default/main/PBD/WORKAREA/CCFD-Consumer_Loan/pdf/tc/iloan/PDPO-C.pdf">個人資料（私隱）條例 – 個人資料收集（客戶）聲明</a></li>
+        </ul>
+      </div>
+      <p class="market-date" style="display: block">推廣期至<span class="effective-date"></span></p>
+      <p class="market-date" style="margin-bottom: 0;padding-bottom: 0;"><span
+          style="width: 6rem;display: inline-block;">申請熱線：</span>2211 1438</p>
+      <p class="office-hour"><span style="width: 6rem;display: inline-block;">辦公時間：</span>星期一至五上午10時至下午6時</p>
+      <p class="office-hour" style="padding-bottom: 2rem;padding-left: 7rem;">星期六上午10時至下午2時（公眾假期除外）</p>
+      <!-- <a class="prd-info" href="https://www.hkbea.com/pdf/tc/Useful%20Info/Instalment%20Loan%20KFS-C.pdf"
+        target="_blank">產品資料概要</a> -->
+      <p class="remark">備註：<img class="toggle-icon" src="./assets/imgs/angel-down.png" alt=""></p>
+      <div class="remark-box">
+        <p class="remark-content">
+          1.「無須現身，現金一天到手！」適用在職客戶於星期一至五下午3時前（星期六及公眾假期除外）以手機透過www.hkbea.com/iloan完成申請和上載所需文件，及成功獲批核HK$200,000或以下。</p>
+        <p class="remark-content">
+          2.特選客戶稅季貸款之實際年利率低至1.33%（以貸款額HK$800,000或以上，每月平息0.06%及還款期12個月計算）。實際年利率乃根據《銀行營運守則》之指引計算，並已包括手續費全數豁免優惠。實際年利率及每月還款額已約至小數後2個位，惟適用於個別客戶的實際年利率及每月還款額或有差異。
+        </p>
+        <p class="remark-content">
+          3.稅季貸款之還款期為12或24個月，貸款額高達申請人每月底薪12倍 (最高HK$3,000,000) 。分期貸款之還款期為36、48或60個月，貸款額高達申請人每月底薪12倍 (最高HK$1,200,000)。最終獲批核之貸款額可達之每月底薪倍數按個別客戶情況而有所調整。
+        </p>
+        <p class="remark-content">4.如客戶為受薪人士，每月薪金必須為最少HK$5,000及在現職機構任職滿3個月。如客戶未能提供薪金證明，請致電2211 1438由貸款專員為你跟進申請。</p>
+        <p class="remark-content">5.無卡自動櫃員機(提取個人貸款)服務之最高貸款額為HK$30,000，每次提取金額的上限為HK$15,000， 或按東亞銀行不時作出而無須事先通知的規定。如貸款額超過每次自動櫃員機提取金額的上限，有關貸款將被視為兩個個別貸款，客戶需按自動櫃員機的上限個別提取貸款。</p>
+        <p class="remark-content">6.如客戶申請之貸款額獲得全數批核，本行將不會通知客戶批核結果，而貸款額將直接存入其指定的銀行帳戶內。</p>
+      </div>
+      <div class="form-box">
+        <form id="dataFormTC" action="loan-apps.html" method="get">
+          <input type="hidden" name="webview" value="">
+          <input type="hidden" name="c" value="">
+          <div class="item">
+            <div class="title">
+              <p>推廣編號</p>
+              <p class="tag">(如適用)</p>
+            </div>
+            <div class="input-box">
+              <input type="text" maxlength="10" id="extendId" name="marketingCode" oninput="validate(event)">
+            </div>
+          </div>
+
+          <input id="language" class="language" type="hidden" name="language" />
+          <input id="url" class="url" type="hidden" name="url" />
+          <input id="tspId" class="tspId" type="hidden" name="tspId" />
+          <input id="timestamp" class="timestamp" type="hidden" name="timestamp" />
+          <input id="signature" class="signature" type="hidden" name="signature" />
+          <input id="applicationId" class="applicationId" type="hidden" name="applicationId" />
+          <!-- <input id="doubleReminder" class="doubleReminder" type="hidden" name="doubleReminder" /> -->
+        </form>
+      </div>
+      <p class="en-text">For English version, please check <a id="versionLink" class="underline font-blue"
+          href="https://www.hkbea.com/html/en/bea-consumer-loan-instalment-loan-special-rate.html">HERE</a>
+        to apply via BEA website.</p>
+      <p style="padding:1.5rem .5rem .5rem;font-size: 1.6rem;color:#585656;">
+        此服務只用作產品申請，並非用作下達緊急銀行指示或舉報任何緊急詐騙或可疑交易。如閣下懷疑有任何詐騙行為，請立即致電本行二十四小時電話熱線 2211 1333或親臨本行任何一間分行。</p>
+      <p class="text">借定唔借？還得到先好借！</p>
+      <!-- <button form="dataForm" class="my-btn">查看優惠利率</button> -->
+      <button form="dataFormTC" style="display:none;" class="dataFormTC"></button>
+      <button onclick="getHtml()" class="my-btn">查看優惠利率</button>
+    </div>
+    <div class="err-page" style="display: none">
+      <h3>抱歉</h3>
+      <p class="err-msg">我們暫時未能處理你的指示。如有查詢，請致電私人貸款申請熱線 <a href="tel:21861515">21861515</a>。</p>
+    </div>
+  </div>
+
+  <div id="TC">
+    <div class="copy-success" id="copySuccess">複製成功</div>
+    <div class="is-version">
+      <div class="alert-modal">
+        <h4>注意</h4>
+        <p>提提你，如於申請過程中未能上載文件或遇到其他問題，可能因為你使用的瀏覽器並不支援此網頁。請<span
+            onClick="copyUrl()">按此</span>複製連結至Safari,Chrome,Firefox或Internet
+          Explorer繼續申請。</p>
+        <input type="text" id="copy-ipt" value="测试复制的内容">
+        <button onclick="hideAlert()">確認</button>
+      </div>
+    </div>
+    <div class="bea-header"></div>
+    <div class="main" style="display: block">
+      <img class="header-top publicize-img" id="landingImg" src="" alt="" />
+      <img class="publicize-img" id="loanImg" src=""
+        alt="" />
+      <!-- <p class="notice-text" style="font-weight: bold;text-decoration: underline">1. 提取分期貸款HK$100,000或以上，參加抽獎贏取至潮智能電話(參考零售價: HK$8,599)</p> -->
+      <p class="notice-text">Existing BEA customer with loan amount HK$30,000 or below can also enjoy the “Cardless ATM loan withdrawal” service.</p>
+      <ul class="list">
+        <li>Customers can drawdown the loan from over 200 BEA ATMs across Hong Kong</li>
+        <li>The cash withdrawal limit is up to $15,000 per time. If the loan amount exceeds the maximum cash withdrawal
+          limit, the loan will be deemed as 2 individual Loans.</li>
+      </ul>
+      <div class="termsLink">
+        <p style="padding-left: 10px;">Please click here</p>
+        <ul class="list">
+          <li><a id="keyFacts" target="_blank" href="http://hkgwcmvt-18/iw/cci/meta/injection/iw-mount/default/main/PBD/WORKAREA/CCFD-Consumer_Loan/pdf/tc/iloan/Instalment%20Loan%20KFS-C.pdf">Key Facts Statement</a></li>
+          <li><a id="termsConditions" target="_blank" href="http://hkgwcmvt-18/iw/cci/meta/injection/iw-mount/default/main/PBD/WORKAREA/CCFD-Consumer_Loan/pdf/tc/iloan/iloan-tnc.pdf">Terms and Conditions</a></li>
+          <li><a id="statement" target="_blank" href="http://hkgwcmvt-18/iw/cci/meta/injection/iw-mount/default/main/PBD/WORKAREA/CCFD-Consumer_Loan/pdf/tc/iloan/PDPO-C.pdf">The Personal Data (Privacy) Ordinance – Personal Information Collection (Customers) Statement</a></li>
+        </ul>
+      </div>
+      <p class="market-date" style="display: block">The promotion period is valid till <span
+          class="effective-date"></span></p>
+      <p class="market-date" style="margin-bottom: 0;padding-bottom: 0;"><span
+          style="width: 6rem;display: inline-block;">Application Hotline: </span>2211 1438</p>
+      <p class="office-hour"><span style="width: 6rem;display: inline-block;">Working Hours: </span>10:00 a.m. to 6:00
+        p.m. (Monday to Friday)</p>
+      <p class="office-hour" style="padding-bottom: 2rem;padding-left: 7rem;">10:00 a.m. to 2:00 p.m.(Saturday)(except
+        public holidays)</p>
+      <!-- <a class="prd-info" href="https://www.hkbea.com/pdf/tc/Useful%20Info/Instalment%20Loan%20KFS-C.pdf"
+        target="_blank">Key Facts Statement</a> -->
+      <p class="remark">Remarks:<img class="toggle-icon" src="./assets/imgs/angel-down.png" alt=""></p>
+      <div class="remark-box">
+        <p class="remark-content">
+          1. "No need to show up! One day drawdown!” applies to employed customers who successfully apply for a loan with an approved amount of HK$200,000 or below and submit documents online using their mobile phones via www.hkbea.com/iloan by 3p.m. on Monday to Friday (Saturdays and public holidays excluded).
+        </p>
+        <p class="remark-content">
+          2. The Annualised Percentage Rate ("APR") as low as 1.33% only applies to selected customers. (It is calculated as for a loan amount of HK$800,000 with a monthly flat rate of 0.06%, and a repayment period of 12 months.) The APR is calculated according to the standard method set out in the Code of Banking Practice and includes the full arrangement fee waiver. Both the APR and monthly repayments are rounded up or down to the nearest 2 decimal places. Please note that actual APRs and monthly repayments may differ.
+        </p>
+        <p class="remark-content">
+          3. The repayment period for the Tax Season Loan is either 12 or 24 months and the loan amount can be up to 12 times of the applicant’s basic monthly salary (maximum HK$3,000,000). The repayment period for the Instalment Loan is either 36, 48, or 60 months and the loan amount can be up to 12 times of the applicant’s basic monthly salary (maximum HK$1,200,000). The final approved loan amount, based on a multiple of the applicant’s monthly salary, is subject to change in accordance with individual circumstances.
+        </p>
+        <p class="remark-content">
+          4. The customer must have a minimum monthly basic salary of HK$5,000 and have been employed by his/her present employer for at least 3 months. If you cannot provide any income proofs, please contact our loan officers at 2211 1438 for application.
+        </p>
+        <p class="remark-content">
+          5. The maximum Loan amount for ATM Loan Withdrawal service is $30,000 and the cash withdrawal limit is up to $15,000 per time or as prescribed by BEA from time to time without prior notice. If the Loan amount exceeds the maximum cash withdrawal limit, the Loan will be deemed as 2 individual Loans. Customer is required to follow the cash withdrawal limit of ATM to withdraw the individual Loan.
+        </p>
+        <p class="remark-content">
+          6. If the requested loan amount is approved in full, BEA will not notify the applicant. The loan amount will be credited to the applicant’s designated bank account directly.
+        </p>
+      </div>
+      <div class="form-box">
+        <form id="dataFormEN" action="loan-apps.html" method="get">
+          <input type="hidden" name="webview" value="">
+          <input type="hidden" name="c" value="">
+          <div class="item">
+            <div class="title" style="width: 14rem;flex-basis: 14rem;">
+              <p>Promotion code</p>
+              <p class="tag">(if applicable)</p>
+            </div>
+            <div class="input-box">
+              <input type="text" maxlength="10" id="extendId" name="marketingCode" oninput="validate(event)">
+            </div>
+          </div>
+
+          <input id="language" class="language" type="hidden" name="language" />
+          <input id="url" class="url" type="hidden" name="url" />
+          <input id="tspId" class="tspId" type="hidden" name="tspId" />
+          <input id="timestamp" class="timestamp" type="hidden" name="timestamp" />
+          <input id="signature" class="signature" type="hidden" name="signature" />
+          <input id="applicationId" class="applicationId" type="hidden" name="applicationId" />
+          <!-- <input id="doubleReminder" class="doubleReminder" type="hidden" name="doubleReminder" /> -->
+        </form>
+      </div>
+      <p class="en-text">如需瀏覽中文版，請按<a id="versionLink" class="underline font-blue"
+          href="https://www.hkbea.com/html/en/bea-consumer-loan-instalment-loan-special-rate.html">此</a>切換。</p>
+      <p style="padding:1.5rem .5rem .5rem;font-size: 1.6rem;color:#585656;">
+        This service is solely for product application and is not intended for giving any urgent banking instructions or
+        reporting any urgent fraud or suspicious transactions. Please call our telephone hotline 2211 1333 immediately
+        or visit any of our branches if you suspect there is any fraud.
+      </p>
+      <p class="text">To borrow or not to borrow? Borrow only if you can repay!</p>
+      <!-- <button form="dataForm" class="my-btn">Check Preferential Interest Rates</button> -->
+      <button form="dataFormEN" style="display:none;" class="dataFormEN"></button>
+      <button onclick="getHtml()" class="my-btn">Check Preferential Interest Rate</button>
+    </div>
+    <div class="err-page" style="display: none">
+      <h3>Sorry</h3>
+      <p class="err-msg">We cannot process your request at this moment. Please call our Consumer Loan application
+        hotline at <a href="tel:21861515">21861515</a> for assistance.</p>
+    </div>
+  </div>
+  <div class="model-javascript">
+    <div class="model-shadow" onclick="closeModel()"></div>
+    <div class="close-line" onclick="closeModel()"><span class="close-btn"></span></div>
+    <div class="model-content">
+      <div class="content-top">
+      </div>
+      <div id="contentBottomEN">
+        <div class="content-bottom">
+          <p class="pdf-remark">請滑動上方滾動條至底部，<b>並參閱產品資料概要; 條款細則; 及個人資料（私隱）條例 – 個人資料收集（客戶）聲明各項詳情。</b></p>
+          <p class="checkbox-block" style="padding: 0px 15px;">
+            <!-- <input class="checkPdfs" id="checkPdfs" type="checkbox" onclick="checkTerms()"> -->
+            <input class="checkPdfs" id="checkPdfs" type="checkbox"">
+            <label>本人已閱讀、明白及同意<b>以上產品資料概要</b>、<b>條款及細則、及個人資料（私隱）條例 - 個人資料收集（客戶）聲明</b>。</label>
+          </p>
+          <p class="checkbox-err-msg"></p>
+          <p>
+            <button class="my-btn" type="button" onclick="applyProcess('TC')">查看優惠利率</button>
+          </p>
+          <p class="termsErrTC">請先閱讀、明白及同意所有文件，並按空格方可繼續申請。</p>
+        </div>
+      </div>
+      <div id="contentBottomTC">
+        <div class="content-bottom">
+          <p class="pdf-remark">Please scroll down for <b>Key Facts Statement, Terms and Conditions and The Personal Data (Privacy) Ordinance – Personal Information Collection (Customers) Statement.</b></p>
+          <p class="checkbox-block" style="padding: 0px 15px;">
+            <!-- <input class="checkPdfs" id="checkPdfs" type="checkbox" onclick="checkTerms()"> -->
+            <input class="checkPdfs" id="checkPdfs" type="checkbox"">
+            <label>I have read and fully understand and agree<b> the above Key Facts Statement, Terms and Conditions and The Personal Data (Privacy) Ordinance – Personal Information Collection (Customers) Statement.</b></label>
+          </p>
+          <p class="checkbox-err-msg"></p>
+          <p>
+            <button class="my-btn" type="button" onclick="applyProcess('EN')">Check Preferential Interest Rate</button>
+          </p>
+          <p class="termsErrEN" style="display: none">Please read and fully understand and agree the following documents, and press the above button to proceed the application.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="termsModel">
+    <div class="terms-shadow" onclick="closeTerms()"></div>
+    <div class="terms-content" id="termsEN">
+      <div onclick="closeTerms()" class="close-line" style="top: 0px; right: 0px; width:30px"><span class="close-btn"></span></div>
+      <div class="terms-header">注意</div>
+      <div class="terms-tips">
+        <p>請按條款細則參閱有關詳情。</p>
+        <p>請按個人資料（私隱）條例 – 個人資料收集（客戶）聲明參閱有關詳情。</p>
+      </div>
+    </div>
+    <div class="terms-content" id="termsTC">
+      <div onclick="closeTerms()" class="close-line" style="top: 0px; right: 0px; width:30px"><span class="close-btn"></span></div>
+      <div class="terms-header">Attention</div>
+      <div class="terms-tips">
+        <p>Please press Terms and Conditions.</p>
+        <p>Please press The Personal Data (Privacy) Ordinance – Personal Information Collection (Customers) Statement.</p>
+      </div>
+    </div>
+  </div> -->
+
+  <script type="text/javascript">
+    var loanImg = {
+      'uatTC': 'https://whp.hkbea.com/images/tc/instalment-loan/iloan_512x512.jpg',
+      'prodTC': 'https://www.hkbea.com/images/tc/instalment-loan/iloan_512x512.jpg',
+      'uatEN': 'http://whp.hkbea.com/images/en/instalment-loan/iloan_512x512.jpg',
+      'prodEN': 'http://www.hkbea.com/images/en/instalment-loan/iloan_512x512.jpg',
+    };
+
+    var landingImg = {
+      'uatTC': 'https://whp.hkbea.com/images/tc/instalment-loan/landing_imgTop.jpg',
+      'prodTC': 'https://www.hkbea.com/images/tc/instalment-loan/landing_imgTop.jpg',
+      'uatEN': 'https://whp.hkbea.com/images/en/instalment-loan/landing_imgTop.jpg',
+      'prodEN': 'https://www.hkbea.com/images/en/instalment-loan/landing_imgTop.jpg',
+    }
+
+    var doubleRemindUrl = {
+      'uatTC': 'https://whp.hkbea.com/js/doubleReminder/loan/doubleReminderLoantc.js',
+      'prodTC': 'https://www.hkbea.com/js/doubleReminder/loan/doubleReminderLoantc.js',
+      'uatEN': 'https://whp.hkbea.com/js/doubleReminder/loan/doubleReminderLoanen.js',
+      'prodEN': 'https://www.hkbea.com/js/doubleReminder/loan/doubleReminderLoanen.js',
+    }
+
+    var statementUatTC = {
+      "keyFacts": "https://whp.hkbea.com/pdf/tc/iloan/Instalment%20Loan%20KFS-C.pdf",
+      "terms": "https://whp.hkbea.com/pdf/tc/iloan/iloan-tnc.pdf",
+      "statement": "https://whp.hkbea.com/pdf/tc/iloan/PDPO-C.pdf"
+    }
+
+    var statementUatEN = {
+      "keyFacts": "https://whp.hkbea.com/pdf/en/iloan/iloan-KFS_E.pdf",
+      "terms": "https://whp.hkbea.com/pdf/en/iloan/iloan-T&C_E.pdf",
+      "statement": "https://whp.hkbea.com/pdf/en/iloan/iloan-PDPO_E.pdf"
+    }
+
+    var statementProdTC = {
+      "keyFacts": "https://www.hkbea.com/pdf/tc/iloan/Instalment%20Loan%20KFS-C.pdf",
+      "terms": "https://www.hkbea.com/pdf/tc/iloan/iloan-tnc.pdf",
+      "statement": "https://www.hkbea.com/pdf/tc/iloan/PDPO-C.pdf"
+    }
+
+    var statementProdEN = {
+      "keyFacts": "https://www.hkbea.com/pdf/en/iloan/iloan-KFS_E.pdf",
+      "terms": "https://www.hkbea.com/pdf/en/iloan/iloan-T&C_E.pdf",
+      "statement": "https://www.hkbea.com/pdf/en/iloan/iloan-PDPO_E.pdf"
+    }
+
+    var prodDomain = 'docupload.hkbea.com';
+
+    if(window.location.host == prodDomain){
+      var prodEN = document.createElement('script');
+      var prodTC = document.createElement('script');
+      prodEN.src = doubleRemindUrl['prodEN'] + '?' + new Date().getTime().toString();
+      prodTC.src = doubleRemindUrl['prodTC'] + '?' + new Date().getTime().toString();
+      document.getElementsByTagName('head')[0].appendChild(prodEN);
+      document.getElementsByTagName('head')[0].appendChild(prodTC);
+    } else {
+      var uatEN = document.createElement('script');
+      var uatTC = document.createElement('script');
+      uatEN.src = doubleRemindUrl['uatEN'] + '?' + new Date().getTime().toString();
+      uatTC.src = doubleRemindUrl['uatTC'] + '?' + new Date().getTime().toString();
+      document.getElementsByTagName('head')[0].appendChild(uatEN);
+      document.getElementsByTagName('head')[0].appendChild(uatTC);
+    }
+
+    var lang = getUrlParams('language').toUpperCase();
+    lang = (lang != 'TC' && lang != 'EN') ? 'TC' : lang;
+    // var sessionLang = sessionStorage.getItem('lang');
+    // if(lang == '' && sessionLang != 'null' && sessionLang){
+    //   lang = sessionLang;
+    //   sessionStorage.removeItem('lang');
+    // } else {
+    //   lang = (lang != 'TC' && lang != 'EN') ? 'TC' : lang;
+    // }
+    document.getElementsByTagName("title")[0].innerText = lang == "EN" ? "Consumer Loans" : "分期貸款 - 手機申請";
+    var contentBottom = "contentBottom" + lang;
+    // var termsContent = "terms" + lang;
+    document.getElementById(lang).remove();
+    document.getElementById(contentBottom).remove();
+    // document.getElementById(termsContent).remove();
+    document.getElementById('language').value = lang;
+
+    var main = document.getElementById('main');
+    var inputForm = document.forms[0][0];
+    var inputForm2 = document.forms[0][1];
+    var marKetC = document.getElementById('extendId');
+    var webview = getUrlParams('webview');
+    var channelCode = getUrlParams('c');
+    var marketingCode = getUrlParams('marketingCode');
+    if (marketingCode) {
+      marKetC.value = marketingCode;
+      marKetC.setAttribute('readOnly', 'readOnly');
+    }
+    if (channelCode) {
+      inputForm2.value = channelCode;
+    }
+    if (webview == 'Y') {
+      inputForm.value = webview;
+      var header = document.getElementsByClassName('bea-header')[0],
+        title = document.getElementsByClassName('header-top')[0];
+      header.style.display = 'none';
+      title.style.marginTop = 0;
+    }
+
+    var terms = true, information = true;
+    var modelJavascript = document.getElementsByClassName("model-javascript")[0];
+    var modelBody = document.getElementsByTagName("body")[0];
+    var contentTop = document.getElementsByClassName("content-top")[0];
+    var checkPdfs = document.getElementById("checkPdfs");
+    checkPdfs.disabled = true;
+    var pdf_remark = document.getElementsByClassName("pdf-remark")[0];
+    contentTop.onscroll = scrollCheck;  
+
+    function scrollCheck() {
+      if (contentTop.scrollTop + contentTop.clientHeight >= contentTop.scrollHeight) {
+        pdf_remark.style.display = "none";
+        checkPdfs.disabled = false;
+      } else {
+        var termsErr = "termsErr" + lang;
+        document.getElementsByClassName(termsErr)[0].style.display = "none";
+      }
+    }
+
+    function getHtml() {
+      var reg = /\<body\>([\s\S]*)\<\/body\>/;
+      var bodyContent = lang == "EN" ? doubleReminderLoanen.match(reg) : doubleReminderLoantc.match(reg);
+      // var bodyContent = kfs.match(reg);
+      var content = bodyContent ? bodyContent[1] : '';
+      modelJavascript.style.display = "block";
+      modelBody.style.overflow = "hidden";
+      document.getElementsByClassName("content-top")[0].innerHTML = content;
+      contentTop.onscroll = scrollCheck;
+      scrollCheck();
+    }
+    function closeModel() {
+      checkPdfs.disabled = true;
+      checkPdfs.checked = false;
+      pdf_remark.style.display = "block";
+      contentTop.onscroll = null;
+      contentTop.scrollTop = 0;
+      modelJavascript.style.display = "none";
+      modelBody.style.overflow = "auto";
+    }
+
+    function applyProcess(lang) {
+      if (checkPdfs.checked) {
+        var buttonClass = "dataForm" + lang;
+        sessionStorage.setItem('mustVisit','true');
+        document.getElementsByClassName(buttonClass)[0].click();
+      } else {
+        var termsErr = "termsErr" + lang;
+        document.getElementsByClassName(termsErr)[0].style.display = "block";
+      }
+    }
+
+    // var termsModel = document.getElementsByClassName("termsModel")[0];
+    // function checkTerms(){
+    //   if(!(terms && information)){
+    //     termsModel.style.display = 'block';
+    //     checkPdfs.checked = false;
+    //   }
+    //   var termsErr = "termsErr" + lang;
+    //   document.getElementsByClassName(termsErr)[0].style.display = "none";
+    // }
+
+    function closeTerms(){
+      termsModel.style.display = 'none';
+    }
+
+    setLink();
+    function setLink(){
+      var link, windowLocation = window.location.host;
+      if(windowLocation == prodDomain && lang == "EN"){
+        link = statementProdEN;
+      } else if(windowLocation == prodDomain && lang == "TC"){
+        link = statementProdTC;
+      } else if(windowLocation != prodDomain && lang == "EN"){
+        link = statementUatEN;
+      } else {
+        link = statementUatTC;
+      }
+      document.getElementById("keyFacts").href = link['keyFacts']+ '?' + new Date().getTime().toString();
+      document.getElementById("termsConditions").href = link['terms']+ '?' + new Date().getTime().toString();
+      document.getElementById("statement").href = link['statement']+ '?' + new Date().getTime().toString();
+    }
+
+    setImg();
+    function setImg() {
+      var url = (window.location.host == prodDomain) ? 'prod' : 'uat';
+      url = url + lang;
+      document.getElementById('loanImg').src = loanImg[url] + '?' + new Date().getTime().toString();
+      document.getElementById('landingImg').src = landingImg[url] + '?' + new Date().getTime().toString();
+    }
+    function errPage() {
+      document.getElementsByClassName('main')[0].style.display = 'none';
+      document.getElementsByClassName('err-page')[0].style.display = 'block';
+    }
+
+    function setDate(date) {
+      var dateDom = document.getElementsByClassName('effective-date');
+      for (var i = 0; i < dateDom.length; i++) {
+        dateDom[i].innerHTML = date
+      }
+    }
+
+    function getDate() {
+      var url = "./getDate";
+      var obj = {
+        time: 30000,
+        method: "POST",
+        url: url,
+        callback: function (dataService) {
+          dataService = JSON.parse(dataService);
+          if (dataService.status != 'success') {
+            errPage();
+          } else {
+            setDate(convertDate(dataService.date));
+          }
+        }
+      };
+      callService(obj);
+    }
+
+    function convertDate(date) {
+      var dateArr = date.match(/\d+/g);
+      var year = dateArr[0];
+      var month = dateArr[1];
+      var day = dateArr[2];
+      if (month[0] === '0') {
+        month = month.substr(1);
+      }
+      if (day[0] === '0') {
+        day = day.substr(1);
+      }
+      if(lang == "EN"){
+        switch(month){
+          case '1':
+            month = 'January';
+            break;
+          case '2':
+            month = 'February';
+            break;  
+          case '3':
+            month = 'March';
+            break;  
+          case '4':
+            month = 'April';
+            break;  
+          case '5':
+            month = 'May';
+            break;  
+          case '6':
+            month = 'June';
+            break;  
+          case '7':
+            month = 'July,';
+            break;  
+          case '8':
+            month = 'August';
+            break;  
+          case '9':
+            month = 'September';
+            break;  
+          case '10':
+            month = 'October';
+            break;  
+          case '11':
+            month = 'November';
+            break;  
+          case '12':
+            month = 'December';
+            break;  
+        }
+        day = day + '<sup>th</sup>'
+        return day + " " + month + " " + year;
+      } else {
+        return year + '年' + month + '月' + day + '日';
+      }
+    }
+
+    function callService(obj) {
+      var request = new XMLHttpRequest();
+      var timeout = false;
+      var timer = setTimeout(function () {
+        timeout = true;
+        request.abort();
+      }, obj.time);
+      request.open(obj.method, obj.url);
+      request.onreadystatechange = function () {
+        if (request.readyState !== 4) {
+          return;
+        }
+        if (timeout) {
+          errPage();
+        }
+        clearTimeout(timer);
+        if (request.status === 200) {
+          obj.callback(request.responseText);
+        }
+      };
+      request.send(JSON.stringify({ "marketingCode": marketingCode }));
+    }
+
+    window.onload = function () {
+      var url = document.getElementsByClassName("url")[0];
+      var tspId = document.getElementsByClassName("tspId")[0];
+      var timestamp = document.getElementsByClassName("timestamp")[0];
+      var signature = document.getElementsByClassName("signature")[0];
+      var applicationId = document.getElementsByClassName("applicationId")[0];
+      // var doubleReminder = document.getElementsByClassName("doubleReminder")[0];
+
+      var enVersionEle = document.getElementById("versionLink");
+      var development = window.location.host == prodDomain ? 'prod' : 'uat';
+      var item = development + (lang == 'TC' ? 'EN' : 'TC');
+      console.log(enVersionEle, item, development);
+      enVersionEle.setAttribute('href', customConfig.versionLinkLanding[item])
+
+      url.value = decodeURIComponent(getUrlParams('url')) || '';
+      tspId.value = getUrlParams('tspId') || '';
+      timestamp.value = getUrlParams('timestamp') || '';
+      signature.value = getUrlParams('signature') || '';
+      applicationId.value = getUrlParams('applicationId') || '';
+      // doubleReminder.value = getUrlParams('doubleReminder') || '';
+
+      getDate();
+      var remarkBox = document.getElementsByClassName('remark-box')[0],
+        baseNum = 0,
+        remarkBtn = document.getElementsByClassName('remark')[0],
+        toggleIcon = document.getElementsByClassName('toggle-icon')[0],
+        remarkHeight = remarkBox.offsetHeight + 35;
+      remarkBox.style.height = '0';
+      remarkBtn.onclick = function () {
+        if (baseNum % 2) {
+          remarkBox.style.height = '0';
+          toggleIcon.setAttribute("src", "./assets/imgs/angel-down.png")
+        } else {
+          remarkBox.style.height = remarkHeight + 'px';
+          toggleIcon.setAttribute("src", "./assets/imgs/angel-up.png");
+        }
+        baseNum++;
+      };
+
+      var copyIpt = document.getElementById("copy-ipt");
+      copyIpt.setAttribute('value', window.location.href);
+      if (!checkVersion()) {
+        var body = document.getElementsByTagName('body')[0];
+        var elem = document.getElementsByClassName('is-version')[0];
+        elem.style.display = 'block';
+        body.style.overflow = 'hidden';
+        body.style.position = 'fixed';
+      }
+    }
+
+    function onlyNum(event) {
+      event.target.value = event.target.value.replace(/\D/g, '');
+    }
+
+    function validate(event) {
+      event.target.value = event.target.value.replace(/[^a-zA-Z\d]/g, '');
+    }
+
+    function getUrlParams(name) {
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); //定义正则表达式
+      var regOk = /^[A-Za-z0-9\%\-\.\:\/]+$/;
+      var parURL = window.location.search;
+      var r = parURL.substr(1).match(reg);
+      if (r != null && regOk.test(r[2])) {
+        return r[2];
+      }
+      return '';
+    }
+
+    function ajaxRequest(url, time, callback) {
+      var request = new XMLHttpRequest();
+      var timeout = false;
+      var timer = setTimeout(function () {
+        timeout = true;
+        request.abort(); //请求终止
+      }, time);
+      request.open("POST", url);
+      request.onreadystatechange = function () {
+        if (timeout) {
+          // toErr();
+          //应该是显示错误信息
+        }
+        clearTimeout(timer);
+        if (request.status === 200 && request.readyState == 4) {
+          callback(request.responseText);
+        }
+      };
+      request.send(null);
+    }
+
+    function copyUrl() {
+      var copyUrl = document.getElementById("copy-ipt");
+      copyUrl.select();
+      document.execCommand("Copy");
+      var copySuc = document.getElementById("copySuccess");
+      copySuc.setAttribute('class', 'copy-success show');
+      setTimeout(function () {
+        copySuc.setAttribute('class', 'copy-success');
+      }, 2000)
+    }
+
+    function hideAlert() {
+      var elem = document.getElementsByClassName('is-version')[0];
+      var body = document.getElementsByTagName('body')[0];
+      elem.style.display = 'none';
+      body.style.overflow = 'auto';
+      body.style.position = 'static';
+    }
+
+    function checkVersion() {
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      if (ua.indexOf("SamsungBrowser") > -1) {
+        return false;
+      } else if (ua.indexOf("Opera") > -1 && ua.match(/(opera\/)(\d+)/i)[2] >= 42) {
+        return true;
+      } else if (ua.indexOf("MSIE") == -1 && ua.indexOf("Trident") > -1) {
+        return true;
+      } else if (ua.indexOf("Firefox") > -1 && ua.match(/(firefox\/)(\d+)/i)[2] >= 51) {
+        return true;
+      } else if (ua.indexOf("Safari") > -1 && ua.indexOf("Chrome") > -1 && ua.match(/(chrome\/)(\d+)/i)[2] >= 55) {
+        return true;
+      } else if (ua.indexOf("iPad") > -1 || ua.indexOf('iPhone') > -1 || ua.indexOf("Mac") > -1) {
+        if (ua.indexOf("Version") > -1 && (ua.match(/(Version\/)(\d+)/i)[2] < 10)) {
+          return false
+        } else {
+          return true;
+        }
+      }
+      return false;
+    }
+  </script>
+  <script async type="text/javascript"
+    src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=61896903"></script>
+</body>
+
+</html>
