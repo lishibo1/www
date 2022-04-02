@@ -1,0 +1,22 @@
+{
+    "status":"success",
+    "message":"",
+    "errCode":"",
+    "resultInfo":[
+      {
+        "value": "1",
+        "nameEn": "HK",
+        "nameTc": "香港",
+        "nameSC": "",
+        "risk": ""
+      },
+      {
+        "value": "2",
+        "nameEn": "OMA",
+        "nameTc": "澳門",
+        "nameSC": "",
+        "risk": ""
+      }
+    ]
+  
+  }

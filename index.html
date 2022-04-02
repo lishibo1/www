@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>申請東亞銀行附屬卡</title>
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta property="og:url" content="www.hkbea.com/isupp">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/imgs/logo.png">
+  <meta property="og:title" content="立即申請專享全年精彩優惠！">
+  <meta property="og:description" content="東亞銀行附屬卡">
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+  <script src="assets/js/configs.js"></script>
+  <script src="assets/js/isMobile.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .model-javascript .content-top p{
+      margin: 14px 0;
+    }
+    .model-javascript .content-top ol{
+      margin: 14px 0;
+      padding-left:40px;
+    }
+    .model-javascript .content-top table{
+      width: 100%;
+      hyphens: auto;
+    }
+
+    .model-javascript input{
+      -webkit-appearance: checkbox;
+    }
+    
+    .model-javascript .content-top ul{
+      padding-left: 40px;
+    }
+
+    .model-javascript .content-top table{
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    input {
+      -webkit-appearance: none;
+    }
+
+    div {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    @font-face {
+      font-family: FontAwesome;
+      src: url(assets/fonts/fontawesome-webfont.eot?v=4.7.0);
+      src: url(assets/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0) format("embedded-opentype"),
+        url(assets/fonts/fontawesome-webfont.woff2?v=4.7.0) format("woff2"),
+        url(assets/fonts/fontawesome-webfont.woff?v=4.7.0) format("woff"),
+        url(assets/fonts/fontawesome-webfont.ttf?v=4.7.0) format("truetype"),
+        url(assets/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format("svg");
+      font-weight: 400;
+      font-style: normal
+    }
+
+    .bea-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      width: 100%;
+      height: 60.5px;
+      background-image: url(assets/imgs/logo_bg.jpg);
+      background-size: auto 58%;
+      background-position: left 30% center;
+      background-repeat: no-repeat;
+      background-color: #e72c27;
+    }
+
+    .bea-header>button {
+      float: right;
+      margin-right: 10%;
+      margin-top: 20px;
+      border: 0;
+      color: #fff;
+      font-size: 16px;
+      background-color: transparent;
+      outline: none;
+    }
+
+    .header-top {
+      width: 100%;
+      margin: 60.5px 0 15px;
+    }
+
+    .main {
+      overflow: hidden;
+    }
+
+    .box {
+      width: 100%;
+      height: 100px;
+      border-bottom: 1px solid #D8D8D8;
+      overflow: hidden;
+      transition: height .2s ease-in-out;
+    }
+
+    .box.show {
+      height: 200px;
+    }
+
+    .box-main,
+    .box-main2 {
+      display: flex;
+      width: 100%;
+      height: 100px;
+    }
+
+    .box .title-pic-box {
+      flex: 2;
+      line-height: 116px;
+      text-align: center;
+    }
+
+    .box .title-pic {
+      height: 33%;
+    }
+
+    .box .box-text {
+      flex: 3;
+      display: table;
+      font-size: 15px;
+      height: 100px;
+    }
+
+    .box .box-text span {
+      display: table-cell;
+      width: 100%;
+      vertical-align: middle;
+      font-weight: bold;
+      line-height: 22px;
+    }
+
+    .box .box-text .small-title {
+      font-size: 14px;
+      font-weight: normal;
+      color: #666;
+    }
+
+    .box .arrow-down-icon {
+      flex: 1;
+      text-align: center;
+      line-height: 100px;
+      transition: transform .15s ease-in-out;
+    }
+
+    .box .arrow-down-icon::before {
+      content: "\f107";
+      width: 20px;
+      height: 20px;
+      font-size: 20px;
+      color: #8e8989;
+      font-weight: 100;
+      font-family: "FontAwesome";
+    }
+
+    .box.show .arrow-down-icon {
+      transform: rotate(-180deg);
+    }
+
+    .box-main2 {
+      opacity: 0;
+      transform: translateY(-12px);
+      transition: all .2s ease-in-out;
+    }
+
+    .box.show .box-main2 {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .box-main2 .blank1,
+    .box-main2 .blank2 {
+      padding: 12px;
+      flex: 3.5;
+    }
+
+    .box-main2 .blank2 {
+      padding: 0;
+      padding-top: 6px;
+      flex: 1;
+      font-size: 26px;
+      color: #e72c27;
+      text-align: center;
+    }
+
+    .gift {
+      padding-left: 28px;
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      font-size: 13px;
+      text-align: left;
+      color: #e72c27;
+      background-image: url("assets/imgs/landPics/bea-17.png");
+      background-size: auto 80%;
+      background-position: left center;
+      background-repeat: no-repeat;
+    }
+
+    .description {
+      padding-top: 4px;
+      font-size: 12px;
+      color: #666;
+      line-height: 14px;
+    }
+
+    .gift.pic2 {
+      background-image: url("assets/imgs/landPics/bea-01.png");
+      background-size: auto 54%;
+    }
+
+    .blank-text {
+      font-size: 20px;
+      color: #e72c27;
+    }
+
+    .box-main2-other {
+      padding: 0 15px;
+      display: block;
+      color: #666;
+    }
+
+    .box-main2-other ul li {
+      list-style-position: inside;
+      font-size: 14px;
+      padding-bottom: 5px;
+    }
+
+    .prompt {
+      font-size: 12px;
+    }
+
+    .box-text.extra-title {
+      flex: 5;
+      padding-left: 15px;
+      font-weight: normal;
+      color: #666;
+    }
+
+    .input-box {
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .input-one,
+    .input-two {
+      height: 44px;
+      border: none;
+      border-bottom: 1px solid #c8c7cc;
+      color: #5b5b60;
+      font-family: inherit;
+      font-size: 14px;
+      line-height: 1.2;
+      padding: 5px 4px;
+      box-shadow: none !important;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .input-one {
+      float: left;
+      width: 48%;
+    }
+
+    .input-one:last-child {
+      float: right;
+    }
+
+    .input-two {
+      width: 100%;
+    }
+
+    .en-version {
+      font-size: 15px;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    .en-version a {
+      color: #E72C27;
+      text-decoration: none;
+    }
+
+    .notice {
+      font-size: 15px;
+      color: #E72C27;
+      text-align: center;
+    }
+
+    .tips {
+      margin: 30px;
+      font-size: 15px;
+      text-align: center;
+      color: #585656;
+    }
+
+    .share-box {
+      width: 100%;
+      margin: 60px 0;
+      display: flex;
+      margin-bottom: 100px;
+    }
+
+    .share-box a {
+      text-decoration: none;
+      color: #999;
+    }
+
+    .share-box span {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .share-box span:nth-child(odd) {
+      flex: 4;
+    }
+
+    .share-box span:nth-child(even) {
+      flex: 0.5;
+      color: #ddd;
+    }
+
+    .my-btn {
+      position: fixed;
+      bottom: 0;
+      display: block;
+      margin: 0 auto;
+      border: 0;
+      outline: none;
+      background-color: #E72C27;
+      width: 100%;
+      height: 67px;
+      font-size: 1.8rem;
+      border-radius: 0;
+      color: #fff;
+      padding: 0 1em;
+      text-decoration: none;
+      text-align: center;
+      -webkit-appearance: none;
+      text-overflow: ellipsis;
+      text-transform: none;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color, opacity 100ms linear;
+      user-select: none;
+      line-height: 1;
+    }
+
+    .layer {
+      display: none;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      z-index: 1050;
+      transition: opacity 0.15s linear;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+    }
+
+    .layer .curtain {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1040;
+      opacity: 0.5;
+      background-color: #000;
+      transition: opacity 0.15s linear;
+    }
+
+    .layer .content {
+
+      transition: transform 3s ease-out;
+      position: relative;
+      width: auto;
+      height: 94%;
+      margin: 10px;
+      z-index: 1090;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+      box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+      background-clip: padding-box;
+      outline: 0;
+    }
+
+    .layer .content p {
+      margin: 0 0 10.5px;
+      line-height: 26px;
+      color: #666666;
+    }
+
+    .layer .content .alert-text {
+      height: 88%;
+      overflow-y: auto;
+    }
+
+    .layer .content button {
+      display: inline-block;
+      border-radius: 30px;
+      padding: 10px 25px;
+      color: #fff;
+      background-color: #E72C27;
+      border-color: #E72C27;
+      margin: 20px auto;
+      font-size: 15px;
+      line-height: 1.42857;
+      font-weight: normal;
+      text-align: center;
+      vertical-align: middle;
+      user-select: none;
+      transition: all .2s ease;
+      touch-action: manipulation;
+      cursor: pointer;
+      background: #E72C27;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      outline: none;
+    }
+
+    .copy-success {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      width: 150px;
+      height: 40px;
+      line-height: 40px;
+      background-color: rgba(0, 0, 0, .85);
+      color: #fff;
+      z-index: 1;
+      border-radius: 6px;
+      opacity: 0;
+      display: none;
+      text-align: center;
+    }
+
+    .copy-success.show {
+      display: block;
+      z-index: 10;
+      animation: showCopy 2s ease;
+      -webkit-animation: showCopy 2s ease;
+    }
+
+    @keyframes showCopy {
+      0% {
+        opacity: 0;
+        display: none;
+      }
+
+      30% {
+        opacity: 1;
+        display: block;
+      }
+
+      70% {
+        opacity: 1;
+        display: block;
+      }
+
+      100% {
+        opacity: 0;
+        display: none;
+      }
+    }
+
+    @-webkit-keyframes showCopy {
+      0% {
+        opacity: 0;
+        display: none;
+      }
+
+      30% {
+        opacity: 1;
+        display: block;
+      }
+
+      70% {
+        opacity: 1;
+        display: block;
+      }
+
+      100% {
+        opacity: 0;
+        display: none;
+      }
+    }
+
+    .is-version {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      z-index: 9;
+      display: none;
+      background-color: rgba(0, 0, 0, .4);
+    }
+
+    .alert-modal {
+      max-width: 270px;
+      background-color: #fff;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      border-radius: 13px;
+      -webkit-border-radius: 13px;
+      margin: auto;
+    }
+
+    .alert-modal p {
+      margin: 0;
+      text-align: justify;
+      font-size: 13px;
+      color: inherit;
+      padding: 0 16px 0;
+    }
+
+    .alert-modal h4 {
+      font-size: 17px;
+      font-weight: 600;
+      margin: 0;
+      padding: 20px 16px 7px;
+      text-align: center;
+    }
+
+    .alert-modal button {
+      border: none;
+      border-top: 1px solid #dbdbdf;
+      display: block;
+      font-size: 17px;
+      width: 100%;
+      padding: 6px;
+      height: 44px;
+      background-color: transparent;
+      color: #488aff;
+      font-weight: 700;
+    }
+
+    .alert-modal span {
+      color: #488aff;
+      text-decoration: underline;
+    }
+
+    .alert-modal input {
+      opacity: 0;
+    }
+
+    .product-statement {
+      padding-left: 2.2rem;
+    }
+
+    .product-statement a {
+      color: #666;
+    }
+
+    .model-javascript {
+      position: fixed;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      z-index: 100;
+      display: none;
+    }
+
+    .model-javascript .model-shadow {
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+      background: #ddd;
+    }
+
+    .close-line {
+      width: 100%;
+      height: 30px;
+      padding: 5px;
+      position: absolute;
+      bottom: calc(100% - 4rem + 8px);
+      text-align: right;
+    }
+
+    .close-line .close-btn {
+      width: 20px;
+      height: 20px;
+      position: relative;
+    }
+
+    .close-line .close-btn::before,
+    .close-line .close-btn::after {
+      content: "";
+      position: absolute;
+      /*方便进行定位*/
+      height: 20px;
+      width: 2px;
+      top: 2px;
+      right: 9px;
+      /*设置top和right使图像在20*20框中居中*/
+      background: #fff;
+    }
+
+    .termsModel .close-line .close-btn::before,
+    .termsModel .close-line .close-btn::after {
+      background: #000;
+    }
+
+    .close-line .close-btn::before {
+      transform: rotate(45deg);
+      /*进行旋转*/
+    }
+
+    .close-line .close-btn::after {
+      transform: rotate(-45deg);
+    }
+
+    .model-javascript .model-content {
+      width: 100%;
+      height: calc(100% - 4rem + 8px);
+      position: absolute;
+      bottom: 0px;
+      display: flex;
+      flex-direction: column;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      background: #fff;
+    }
+
+    .model-javascript .model-content .content-top {
+      width: 100%;
+      flex: 1;
+      overflow: scroll;
+      padding: 10px
+    }
+
+    .model-javascript .model-content .content-bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .model-javascript .model-content .content-bottom .pdf-remark {
+      background-color: #fcfcb9;
+      margin: 0 10px 0;
+      padding: 4px 8px 8px;
+      font-size: 14px;
+    }
+
+    .model-javascript .model-content .content-bottom .pdf-remark b {
+      color: #ed171f;
+    }
+
+    .model-javascript .model-content .content-bottom .checkbox-block label {
+      font-size: 14px;
+    }
+
+    .model-javascript .model-content .content-bottom .checkbox-block b {
+      color: #ed171f;
+    }
+
+    .model-javascript .model-content .content-bottom .my-btn {
+      position: unset;
+      display: block;
+      margin: 1rem auto;
+      margin-bottom: 0;
+      border: 0;
+      outline: none;
+      background-color: #f89f2f;
+      width: 94%;
+      height: 4rem;
+      font-size: 1.8rem;
+      border-radius: 0;
+      color: #fff;
+      padding: 0 1em;
+      text-decoration: none;
+      text-align: center;
+      -webkit-appearance: none;
+      text-overflow: ellipsis;
+      text-transform: none;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color, opacity 100ms linear;
+      user-select: none;
+      line-height: 1;
+    }
+
+    .termsErr{
+      padding: 10px 15px 0;
+      display: none;
+      color: #ed171f;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="copy-success" id="copySuccess">複製成功</div>
+  <div class="is-version">
+    <div class="alert-modal">
+      <h4>注意</h4>
+      <p>提提你，如於申請過程中未能上載文件或遇到其他問題，可能因為你使用的瀏覽器並不支援此網頁。請<span
+          onClick="copyUrl()">按此</span>複製連結至Safari,Chrome,Firefox或Internet Explorer繼續申請。</p>
+      <input type="text" id="copy-ipt" value="测试复制的内容">
+      <button onclick="hideAlert()">確認</button>
+    </div>
+  </div>
+  <div class="bea-header">
+    <!--<button type="button" onclick="changeLanguage(event)">EN</button>-->
+  </div>
+  <div class="main">
+    <img class="header-top" src="./assets/imgs/landPics/Untitled-1-02.png" alt="" />
+    <p class="product-statement">
+      <a href="https://www.hkbea.com/pdf/tc/supp_card_key_facts_statement_tc.pdf" target="_blank">產品資料概要</a>
+    </p>
+    <!-- <div class="box">
+      <div class="box-main" onclick="toggleShow(this)">
+        <div class="title-pic-box">
+          <img class="title-pic" src="assets/imgs/landPics/bea-12.png" alt="">
+        </div>
+        <div class="box-text">
+          <span>附屬卡迎新禮遇<span class="small-title">高達HK$600現金回贈</span></span>
+        </div>
+        <span class="arrow-down-icon"></span>
+      </div>
+      <div class="box-main2">
+        <div class="blank1">
+          <p class="gift">HK$450</p>
+          <span class="description">每張附屬卡獲HK$150</span>
+        </div>
+        <div class="blank2">+</div>
+        <div class="blank1">
+          <p class="gift pic2">HK$150</p>
+          <span class="description">成功申請3張附屬卡</span>
+        </div>
+        <div class="blank2">=</div>
+        <div class="blank1 blank-text">HK$600</div>
+      </div>
+    </div> -->
+
+    <div class="box">
+      <div class="box-main" onclick="toggleShow(this)">
+        <div class="title-pic-box">
+          <img class="title-pic" src="assets/imgs/landPics/bea-16.png" alt="">
+        </div>
+        <div class="box-text">
+          <span>專享全年精彩優惠^</span>
+        </div>
+        <span class="arrow-down-icon"></span>
+      </div>
+      <div class="box-main2 box-main2-other">
+        <ul>
+          <li>優先預訂人氣演唱會門票</li>
+          <li>精選院線電影戲票低至8折</li>
+        </ul>
+        <p class="prompt">^ 所有優惠之推廣或有不同及須受條款及細則約束，詳情請瀏覽東亞銀行網頁。</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-main" onclick="toggleShow(this)">
+        <div class="box-text extra-title">
+          <span>參考編號 (如適用)</span>
+        </div>
+        <span class="arrow-down-icon"></span>
+      </div>
+      <div class="box-main2 box-main2-other">
+        <form id="dataForm" action="card-apps.html" method="get">
+          <input type="hidden" name="webview" value="">
+          <input type="hidden" name="c" value="">
+          <p class="input-box">
+            <input class="input-one" id="branchCode" type="text" name="branchCode" oninput="onlyNum(event)"
+              minlength="3" maxlength="3" placeholder="分行編號" />
+            <input class="input-one" id="staffCode" type="text" name="staffCode" oninput="validate(event)" minlength="8"
+              maxlength="8" placeholder="職員編號" />
+          </p>
+          <p class="input-box">
+            <input class="input-two" id="extendId" type="text" name="extendId" oninput="validate(event)" maxlength="10"
+              placeholder="推廣編號" />
+          </p>
+
+          <input id="url" class="url" type="hidden" name="url" />
+          <input id="tspId" class="tspId" type="hidden" name="tspId" />
+          <input id="timestamp" class="timestamp" type="hidden" name="timestamp" />
+          <input id="signature" class="signature" type="hidden" name="signature" />
+          <input id="applicationId" class="applicationId" type="hidden" name="applicationId" />
+        </form>
+      </div>
+    </div>
+
+    <p class="en-version">
+      For English version, please click <a
+        href="https://www.hkbea.com/jsp/hk/bea-online-application.jsp?language=en&amp;stepId=1&amp;type=c50">HERE</a> to
+      apply via BEA website.
+    </p>
+  
+    <p class="notice" onclick="alertTips()">申請及注意事項</p>
+    <p style="font-size: 15px;margin:30px 15px 0;color:#585656;text-align: left">
+      此服務只用作產品申請或推廣優惠登記，並非用作發出任何緊急銀行指示或舉報緊急詐騙或可疑交易。如閣下懷疑有任何詐騙行為，請立即致電本行24小時信用卡電話熱線 36086628或親臨本行任何一間分行。</p>
+    <p class="tips">借定唔借？還得到先好借！</p>
+    <div class="share-box">
+      <span><a href="https://www.hkbea.com/html/tc/bea-disclaimer.html" target="_blank">免責聲明</a></span>
+      <span>|</span>
+      <span><a href="https://www.hkbea.com/html/tc/bea-terms-and-conditions.html" target="_blank">條款及細則</a></span>
+      <span>|</span>
+      <span><a href="https://www.hkbea.com/html/tc/bea-priacy-statement.html" target="_blank">隱私聲明</a></span>
+      <span>|</span>
+      <span><a href="https://www.hkbea.com/html/tc/bea-about-bea-regulatory-disclosures.html"
+          target="_blank">監管披露</a></span>
+    </div>
+    <button form="dataForm" class="dataForm" style="display: none" class="my-btn"></button>
+    
+    <button onclick="getHtml()" class="my-btn">立即申請</button>
+  </div>
+  <div class="layer">
+    <div class="curtain"></div>
+    <div class="content fade">
+      <div class="alert-text">
+        <p>1. 申請人須為年滿十六歲或以上的香港居民。</p>
+        <p>2. 申請不適用於東亞銀行公司卡、香港教育專業人員協會會員Visa卡、 香港大學Mastercard（包括金卡及普通卡）及全日制學生主卡。</p>
+        <p>3. 關於香港大學Visa白金卡，附屬卡申請人若非香港大學畢業生，所發出之附屬卡將為東亞銀行Visa白金卡。</p>
+        <p>4. 此申請渠道服務暫時只支援手機及不適用於東亞銀行員工。</p>
+        <p>5. 請<a href="https://www.hkbea.com/pdf/tc/credit-card/isupp/gift.pdf" target="_blank">按此</a>參閱迎新優惠之條款及細則。</p>
+        <p>6. 每個主卡賬戶最多可獲批3張附屬卡。</p>
+        <p>7. 預設附屬卡信貸限額，不適用於東亞銀行銀聯雙幣白金信用卡及信貸限額低於HK$10,000之主卡賬戶。</p>
+        <p>8. 附屬卡將郵寄至主卡持卡人之通訊地址；附屬卡持卡人一切簽賬及現金透 支均會顯示於主卡持卡人之結單內。</p>
+      </div>
+      <div style="width: 100%;text-align: center;"><button onclick="closeAlert()">確定</button></div>
+    </div>
+  </div>
+  <div class="model-javascript">
+    <div class="model-shadow" onclick="closeModel()"></div>
+    <div class="close-line" onclick="closeModel()"><span class="close-btn"></span></div>
+    <div class="model-content">
+      <div class="content-top">
+      </div>
+      <div id="contentBottom">
+        <div class="content-bottom">
+          <p class="pdf-remark">請滑動上方滾動條至底部以參閱各項詳情</p>
+          <p class="checkbox-block" style="padding: 0px 15px;">
+            <!-- <input class="checkPdfs" id="checkPdfs" type="checkbox" onclick="checkTerms()"> -->
+            <input class="checkPdfs" id="checkPdfs" type="checkbox">
+            <label>本人已閱讀並同意<b>以上產品資料概要</b>、<b>條款及細則、信用卡持卡人合約主要條款及細則摘要及個人資料（私隱）條例 - 個人資料收集（客戶）聲明</b>。</label>
+          </p>
+          <p class="checkbox-err-msg"></p>
+          <p class="termsErr">請先閱讀以上所有文件，你必須閱讀<span style="font-weight: 600;text-decoration: underline;">所有</span>文件並同意方可繼續申請。</p>
+          <p>
+            <button class="my-btn" type="button" onclick="applyProcess()">下一步</button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+
+    var doubleRemindUrl = {
+      'uatJS': 'https://www.hkbea.com/js/doubleReminder/card/doubleReminderCardtc.js',
+      'prodJS': 'https://www.hkbea.com/js/doubleReminder/card/doubleReminderCardtc.js',
+    }
+                  
+    var prodDomain = 'docupload.hkbea.com';
+
+    if(window.location.host == prodDomain){
+      var prodJS = document.createElement('script');
+      prodJS.src = doubleRemindUrl['prodJS'] + '?' + new Date().getTime().toString();
+      document.getElementsByTagName('head')[0].appendChild(prodJS);
+    } else {
+      var uatJS = document.createElement('script');
+      uatJS.src = doubleRemindUrl['uatJS']  + '?' + new Date().getTime().toString();
+      document.getElementsByTagName('head')[0].appendChild(uatJS);
+    }
+
+    var lang = (getUrlParams("lang") || "ZH").toLocaleUpperCase();
+    var main = document.getElementById('main');
+    var inputForm = document.forms[0][0];
+    var inputForm2 = document.forms[0][1];
+    var channelCode = getUrlParams('c');
+    if (channelCode) {
+      inputForm2.value = channelCode;
+    }
+    var webview = getUrlParams('webview');
+    if (webview == 'Y') {
+      inputForm.value = webview;
+      var header = document.getElementsByClassName('bea-header')[0], title = document.getElementsByClassName('header-top')[0];
+      header.style.display = 'none';
+      title.style.marginTop = 0;
+    }
+    window.onload = function () {
+      var url = document.getElementsByClassName("url")[0];
+      var tspId = document.getElementsByClassName("tspId")[0];
+      var timestamp = document.getElementsByClassName("timestamp")[0];
+      var signature = document.getElementsByClassName("signature")[0];
+      var applicationId = document.getElementsByClassName("applicationId")[0];
+
+      url.value = decodeURIComponent(getUrlParams('url')) || '';
+      tspId.value = getUrlParams('tspId') || '';
+      timestamp.value = getUrlParams('timestamp') || '';
+      signature.value = getUrlParams('signature') || '';
+      applicationId.value = getUrlParams('applicationId') || '';
+
+      var baseNum = 0,
+        toggleIcon = document.getElementsByClassName('toggle-icon')[0];
+
+      var copyIpt = document.getElementById("copy-ipt");
+      copyIpt.setAttribute('value', window.location.href);
+      if (!checkVersion()) {
+        var body = document.getElementsByTagName('body')[0];
+        var elem = document.getElementsByClassName('is-version')[0];
+        elem.style.display = 'block';
+        body.style.overflow = 'hidden';
+        body.style.position = 'fixed';
+      }
+    }
+
+    var modelJavascript = document.getElementsByClassName("model-javascript")[0];
+    var modelBody = document.getElementsByTagName("body")[0];
+    var contentTop = document.getElementsByClassName("content-top")[0];
+    var checkPdfs = document.getElementById("checkPdfs");
+    checkPdfs.disabled = true;
+    var pdf_remark = document.getElementsByClassName("pdf-remark")[0];
+    contentTop.onscroll = scrollCheck;
+    var termsErrIsShow = false;  
+
+    function getHtml() {
+      var reg = /\<body\>([\s\S]*)\<\/body\>/;
+      var bodyContent = doubleReminderCardtc.match(reg);
+      var content = bodyContent ? bodyContent[1] : '';
+      modelJavascript.style.display = "block";
+      modelBody.style.overflow = "hidden";
+      document.getElementsByClassName("content-top")[0].innerHTML = content;
+      contentTop.onscroll = scrollCheck;
+      scrollCheck();
+    }
+
+    function scrollCheck() {
+      if (contentTop.scrollTop + contentTop.clientHeight >= contentTop.scrollHeight) {
+        pdf_remark.style.display = "none";
+        checkPdfs.disabled = false;
+        termsErrIsShow = true;
+      } else {
+        !termsErrIsShow ? document.getElementsByClassName("termsErr")[0].style.display = "none" : '';  
+        termsErrIsShow = false;      
+      }
+    }
+
+    function closeModel() {
+      checkPdfs.disabled = true;
+      checkPdfs.checked = false;
+      pdf_remark.style.display = "block";
+      contentTop.onscroll = null;
+      contentTop.scrollTop = 0;
+      modelJavascript.style.display = "none";
+      modelBody.style.overflow = "auto";
+    }
+
+    function applyProcess() {
+      if (checkPdfs.checked) {
+        sessionStorage.setItem('mustVisit','true');
+        document.getElementsByClassName("dataForm")[0].click();
+      } else {
+        document.getElementsByClassName("termsErr")[0].style.display = "block";
+      }
+    }
+
+
+
+
+    function toggleShow(item) {
+      item.parentNode.classList.toggle('show');
+    }
+    function onlyNum(event) {
+      event.target.value = event.target.value.replace(/\D/g, '');
+    }
+    function validate(event) {
+      event.target.value = event.target.value.replace(/[^a-zA-Z\d]/g, '');
+    }
+    function getUrlParams(name) {
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); //定义正则表达式
+      var regOk = /^[A-Za-z0-9\%\-\.\:\/]+$/;
+      var parURL = window.location.search;
+      var r = parURL.substr(1).match(reg);
+      if (r != null && regOk.test(r[2])) {
+        return r[2];
+      }
+      return '';
+    }
+    function ajaxRequest(url, time, callback) {
+      var request = new XMLHttpRequest();
+      var timeout = false;
+      var timer = setTimeout(function () {
+        timeout = true;
+        request.abort(); //请求终止
+      }, time);
+      request.open("POST", url);
+      request.onreadystatechange = function () {
+        if (timeout) {
+          // toErr();
+          //应该是显示错误信息
+        }
+        clearTimeout(timer);
+        if (request.status === 200 && request.readyState == 4) {
+          callback(request.responseText);
+        }
+      };
+      request.send(null);
+    }
+    function copyUrl() {
+      var copyUrl = document.getElementById("copy-ipt");
+      copyUrl.select();
+      document.execCommand("Copy");
+      var copySuc = document.getElementById("copySuccess");
+      copySuc.setAttribute('class', 'copy-success show');
+      setTimeout(function () {
+        copySuc.setAttribute('class', 'copy-success');
+      }, 2000)
+    }
+    function hideAlert() {
+      var elem = document.getElementsByClassName('is-version')[0];
+      var body = document.getElementsByTagName('body')[0];
+      elem.style.display = 'none';
+      body.style.overflow = 'auto';
+      body.style.position = 'static';
+    }
+    function changeLanguage(event) {
+      if (event.target.innerText == "EN") {
+        // change language to TC
+        event.target.innerText = "TC";
+
+      } else {
+        // change language to EN
+        event.target.innerText = "EN";
+      }
+    }
+    var curtain = document.getElementsByClassName("curtain")[0];
+    var alertContent = document.getElementsByClassName("layer")[0].getElementsByClassName("content")[0];
+    function alertTips() {
+      document.getElementsByClassName("layer")[0].style.display = "block";
+      curtain.style.display = "block";
+      alertContent.className = "content in";
+    }
+    function closeAlert() {
+      document.getElementsByClassName("layer")[0].style.display = "none";
+      curtain.style.display = "none";
+      alertContent.className = "content fade";
+    }
+    function checkVersion() {
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      if (ua.indexOf("SamsungBrowser") > -1) {
+        return false;
+      } else if (ua.indexOf("Opera") > -1 && ua.match(/(opera\/)(\d+)/i)[2] >= 42) {
+        return true;
+      } else if (ua.indexOf("MSIE") == -1 && ua.indexOf("Trident") > -1) {
+        return true;
+      } else if (ua.indexOf("Firefox") > -1 && ua.match(/(firefox\/)(\d+)/i)[2] >= 51) {
+        return true;
+      } else if (ua.indexOf("Safari") > -1 && ua.indexOf("Chrome") > -1 && ua.match(/(chrome\/)(\d+)/i)[2] >= 55) {
+        return true;
+      } else if (ua.indexOf("iPad") > -1 || ua.indexOf('iPhone') > -1 || ua.indexOf("Mac") > -1) {
+        if (ua.indexOf("Version") > -1 && (ua.match(/(Version\/)(\d+)/i)[2] < 10)) {
+          return false
+        } else {
+          return true;
+        }
+      }
+      return false;
+    }
+  </script>
+</body>
+
+</html>

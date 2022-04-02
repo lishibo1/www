@@ -1,0 +1,12 @@
+{
+    "status": "success",
+    "message": "",
+    "errorCode": "",
+    "resultInfo": [
+        {"nameTc": "服務業","nameEn": "Employed","value": "1"},
+        {"nameTc": "個體戶","nameEn": "Unemployed","value": "2"},
+        {"nameTc": "銀行","nameEn": "Self Employment","value": "3"},
+        {"nameTc": "房地產","nameEn": "Student/Housewife","value": "4"},
+        {"nameTc": "其他","nameEn": "Student/Housewife","value": "100"}
+    ]
+}

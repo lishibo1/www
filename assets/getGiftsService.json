@@ -1,0 +1,8 @@
+{
+    "status":"success",
+    "message":"",
+    "errCode":"",
+    "resultInfo": [
+        {"code": "sc01","nameTc": "HK$150 現金回贈","nameEn": "","nameSc": "","srcTc": "assets/imgs/gift1.png","imgEn": "","imgSC": "", "gift": 1}
+    ]
+}

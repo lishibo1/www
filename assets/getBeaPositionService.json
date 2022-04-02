@@ -1,0 +1,11 @@
+{
+    "status": "success",
+    "message": "",
+    "errorCode": "",
+    "resultInfo": [
+        {"nameTc": "東亞總經理","nameEn": "BEA Employed","value": "1"},
+        {"nameTc": "東亞副總經理","nameEn": "BEA Unemployed","value": "2"},
+        {"nameTc": "東亞高級程序員","nameEn": "BEA Self Employment","value": "3"},
+        {"nameTc": "東亞碼農","nameEn": "BEA Student/Housewife","value": "4"}
+    ]
+}

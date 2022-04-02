@@ -1,0 +1,10 @@
+{
+    "status":"success",
+    "message":"",
+    "errorCode":"",
+    "resultInfo":{
+        "isCustomer": "N",
+        "isHK": "Y",
+        "isContinue": "23435435534"
+    }
+}
